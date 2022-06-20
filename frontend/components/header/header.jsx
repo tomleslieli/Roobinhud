@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-
 const Header = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <div className='header-signed-out'>
@@ -13,9 +11,9 @@ const Header = ({ currentUser, logout }) => {
       </div>
       <div className='header-info'>
         <span className='header-info-links'>
-        <Link className='invest'>Invest</Link>
-        <Link className = 'learn'>Learn</Link>
-        <Link className='support'>Support</Link>
+        <Link to='/' className='invest'>Invest</Link>
+        <Link to='/' className = 'learn'>Learn</Link>
+        <Link to='/' className='support'>Support</Link>
         </span>
       </div>
       <div className='header-login-signup'>

@@ -1,0 +1,26 @@
+.login-form-container {
+    position: absolute;
+    white-space: none;
+    background-color: white;
+    display: flex;
+    margin: none;
+    padding: none;
+    width: 100%;
+}
+
+.login-form-left {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    min-width: 50%;
+    margin: none;
+    padding: none;
+}
+.login-form-left img {
+    height: 100%;
+}
+.login-form-box {
+    width: 50%;
+    display: inline-block;
+    left: 200px;
+}

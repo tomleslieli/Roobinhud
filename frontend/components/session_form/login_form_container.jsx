@@ -10,6 +10,7 @@ const mapStateToProps = ({ errors }) => {
     formType: 'Log in',
     navHelper: 'Not on Robinhood?',
     navLink: <Link to="/signup">Create an account</Link>,
+    imgLeft: <img src='https://robinhood-clone-assets.s3.amazonaws.com/login-left-image.jpeg' alt='login-form-left' width='100%'/>,
   };
 };
 

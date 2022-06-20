@@ -1,12 +1,14 @@
 class Api::SessionsController < ApplicationController
+    skip_before_action :verify_authenticity_token
+    
     def create
         @user = User.find_by_credentials(
-            params[:user][:username],
+            params[:user][:email],
             params[:user][:password]
         )
 
         if @user.nil?
-            flash.now[:errors] = ['Unable to log in with provided credentials.']
+            render json: ['Unable to log in with provided credentials.'], status: 401
         else
             login!(@user)
             render '/api/users/show'

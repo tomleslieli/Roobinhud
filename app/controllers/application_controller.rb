@@ -1,7 +1,4 @@
 class ApplicationController < ActionController::Base
-    #take this out once we're in production!!
-    protect_from_forgery with: :exception
-
     helper_method :current_user, :logged_in?
 
     private
