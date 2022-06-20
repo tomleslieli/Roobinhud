@@ -8,11 +8,10 @@ import {
 const _nullErrors = [];
 
 const sessionErrorsReducer = (state = _nullErrors, action) => {
-  debugger
     Object.freeze(state);
     switch (action.type) {
       case RECEIVE_SESSION_ERRORS:
-        return action.errors;
+        return Object.assign(_nullErrors, action.errors);
       case RECEIVE_CURRENT_USER:
         return _nullErrors;
       case CLEAR_ERRORS:

@@ -6,7 +6,7 @@ const Header = ({ currentUser, logout }) => {
     <div className='header-signed-out'>
       <div className='header-logo-signed-in'>
         <Link to="/">
-          <img src='https://robinhood-clone-assets.s3.amazonaws.com/logo_full_black.png' alt='logo-full-black' width='90px'/>
+          <img src='https://robinhood-clone-assets.s3.amazonaws.com/logo_full_black.png' alt='logo-full-black' width='135px'/>
         </Link>
       </div>
       <div className='header-info'>
@@ -16,6 +16,7 @@ const Header = ({ currentUser, logout }) => {
         <Link to='/' className='support'>Support</Link>
         </span>
       </div>
+      <div className='empty-header-space'/>
       <div className='header-login-signup'>
         <nav className="login-signup">
           <Link to="/login">
