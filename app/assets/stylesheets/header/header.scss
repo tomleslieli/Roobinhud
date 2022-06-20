@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+}
+
+.header-signed-out {
+    white-space: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    margin: none;
+    min-width: 100%;
+    min-height: 40px;
+    position: relative;
+}
+
+.header-logo-signed-in {
+    display: inline-block;
+    padding: 3px;
+    margin: 3px;
+    position: relative;
+    top: 2px;
+    margin-left: 10px;
+}
+
+.header-info{
+    display: inline-block;
+}
+
+.header-info-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-info-links .invest {
+    position: fixed;
+    left: 130px;
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.header-info-links .learn {
+    position: fixed;
+    left: 180px;
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.header-info-links .support {
+    position: fixed;
+    left: 230px;
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.header-login-signup {
+    display: inline-block;
+    position: relative;
+    left: -10px;
+}
+
+.login-button {
+    border-radius: 150px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    min-width: 63.5px;
+    min-height: 27px;
+    font-size: 8px;
+    font-weight: bold;
+    padding: 3px;
+    margin: 3px;
+    display: relative;
+    cursor: pointer;
+}
+
+.signup-button {
+    border-radius: 150px;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    min-width: 63.5px;
+    min-height: 27px;
+    font-size: 8px;
+    font-weight: bold;
+    position: relative;
+    padding: 3px;
+    margin: 3px;
+    cursor: pointer;
+}
