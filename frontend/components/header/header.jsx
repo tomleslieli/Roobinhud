@@ -11,9 +11,9 @@ const Header = ({ currentUser, logout }) => {
       </div>
       <div className='header-info'>
         <span className='header-info-links'>
-        <Link to='/' className='invest'>Invest</Link>
-        <Link to='/' className = 'learn'>Learn</Link>
-        <Link to='/' className='support'>Support</Link>
+        <Link to='/' id='link' className='invest'>Invest</Link>
+        <Link to='/' id='link' className = 'learn'>Learn</Link>
+        <Link to='/' id='link' className='support'>Support</Link>
         </span>
       </div>
       <div className='empty-header-space'/>
@@ -42,12 +42,12 @@ const Header = ({ currentUser, logout }) => {
       <div className='empty-header-space'/>
       <div className='header-user'>
         <span className='header-user-links'>
-        <Link to='/' className='rewards'>Rewards</Link>
-        <Link to='/' className = 'portfolio'>Portfolio</Link>
-        <Link to='/' className='cash'>Cash</Link>
+        <Link to='/' id='link' className='rewards'>Rewards</Link>
+        <Link to='/'  id='link' className = 'portfolio'>Portfolio</Link>
+        <Link to='/'  id='link' className='cash'>Cash</Link>
         <h4 className="header-name">{currentUser.full_name}</h4>
         <div className='account'>
-          <Link className="header-button" onClick={logout}>Logout</Link>
+          <Link id='link' className="header-button" onClick={logout}>Logout</Link>
         </div>
         {/* Messages dropdown goes here */}
         {/* Account dropdown goes here */}

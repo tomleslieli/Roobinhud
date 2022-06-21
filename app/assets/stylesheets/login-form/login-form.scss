@@ -1,4 +1,5 @@
 .login-form-container {
+    z-index: 10;
     position: absolute;
     white-space: none;
     background-color: white;
@@ -49,7 +50,6 @@
 .login-form-left {
     display: inline-block;
     width: 50%;
-    height: 100%;
     margin: none;
     padding: none;
     overflow: hidden;

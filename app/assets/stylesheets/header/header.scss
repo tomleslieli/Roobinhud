@@ -2,7 +2,9 @@ body {
     margin: 0;
 }
 
+
 .header-signed-out {
+    z-index: 20;
     white-space: none;
     display: flex;
     align-items: center;
@@ -14,6 +16,7 @@ body {
 }
 
 .header-signed-in {
+    z-index: 20;
     white-space: none;
     display: flex;
     align-items: center;
@@ -56,12 +59,14 @@ body {
     align-items: center;
     margin-left: 15%;
     position: relative;
-    left: -290px;
+    left: -220px;
 }
 
 .account {
     position: relative;
-    left: 185px;
+    left: 140px;
+    font-size: 12px;
+    font-family: "Capsule Sans Text",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
 }
 .header-button {
     text-decoration: none;
@@ -73,22 +78,24 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 15%;
+    margin-left: 12%;
 }
 
 .empty-header-space {
     display: inline-block;
     min-width: 70%;
-    margin-right: -120px;
+    margin-right: -150px;
 }
 .header-info-links .invest {
     position: relative;
     text-decoration: none;
     color: black;
     font-size: 18px;
-    font-weight: bold;
+    font-family: "Capsule Sans Text",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
 }
-
+:hover#link {
+    color: rgb(0,180,5)
+}
 .header-name {
     position: relative;
     left: 150px;
@@ -100,7 +107,7 @@ body {
     text-decoration: none;
     color: black;
     font-size: 18px;
-    font-weight: bold;
+    font-family: "Capsule Sans Text",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
 }
 
 .header-info-links .support {
@@ -109,15 +116,16 @@ body {
     text-decoration: none;
     color: black;
     font-size: 18px;
-    font-weight: bold;
+    font-family: "Capsule Sans Text",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
 }
 
 .header-user-links .rewards {
     position: relative;
     text-decoration: none;
     color: black;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
+    font-family: "Capsule Sans Text",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
 }
 
 .header-user-links .portfolio {
@@ -125,8 +133,9 @@ body {
     left: 27.5%;
     text-decoration: none;
     color: black;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
+    font-family: "Capsule Sans Text",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
 }
 
 .header-user-links .cash {
@@ -134,8 +143,9 @@ body {
     left: 55%;
     text-decoration: none;
     color: black;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
+    font-family: "Capsule Sans Text",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
 }
 
 .header-login-signup {
@@ -151,6 +161,7 @@ body {
     color: black;
     min-width: 100px;
     min-height: 42px;
+    font-family: "Capsule Sans Text",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
     font-size: 12px;
     font-weight: bold;
     padding: 3px;
@@ -166,6 +177,7 @@ body {
     color: white;
     min-width: 100px;
     min-height: 42px;
+    font-family: "Capsule Sans Text",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
     font-size: 12px;
     font-weight: bold;
     position: relative;
@@ -191,3 +203,4 @@ body {
     min-height: 32px;
     font-size: 10px;
 }
+

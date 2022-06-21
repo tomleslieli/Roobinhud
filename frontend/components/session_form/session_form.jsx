@@ -40,10 +40,19 @@ class SessionForm extends React.Component {
     let signup = document.querySelector('.hidden-for-login')
     if (this.props.formType === 'Sign up'){
       signup.classList.add('signup')
+      
     } else {
       signup.classList.remove('signup')
     }
+  
+    let hidden = document.querySelector('.hidden-during-form')
+    if (this.props.formType){
+      hidden.classList.add('hidden')
+    } else {
+      hidden.classList.remove('hidden')
+    }
   }
+  
 
   render() {
     return (

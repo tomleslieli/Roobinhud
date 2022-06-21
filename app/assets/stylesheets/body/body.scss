@@ -1,0 +1,91 @@
+.get-started-container {
+    background-color: #004022;
+    height: 800px;
+    white-space: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.phone-animation-container {
+    display: inline-block;
+}
+
+.phone-animation-container > img {
+    max-height: 80%;
+    max-width: 760px;
+    min-width: 80%;
+    position: relative;
+    position: relative;
+    top: -144px;
+    margin-bottom: -220px;
+    margin-top: 30px;
+    left: 20px;
+}
+
+.investing-container {
+    background: linear-gradient(162deg, rgba(6, 64, 19, 0.7) 0%, rgb(116, 254, 36) 79%, rgb(126, 255, 42) 100%) 100% center / cover, url(https://robinhood-clone-assets.s3.amazonaws.com/noise__d63eaf58eecf93a9e61385dd154fba64.svg) rgb(0, 200, 5);
+    height: 800px;
+}
+
+.free-stock-ribbon {
+    height: 62px;
+    background-image: linear-gradient(74.84deg,#00C805 18.12%,#C3F53C 81.46%);
+    font-family: "Capsule Sans Text",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8px;
+}
+
+.sign-up {
+    max-height: 800px;
+}
+.sign-up img {
+    width: 100%;
+}
+
+.get-started-text {
+    z-index: 0;
+    display: inline-block;
+    min-width: 50%;
+    font-size: 60px;
+    color: #C3F53C;
+    font-family: "Capsule Sans Text", sans-serif;
+    position: relative;
+    text-align: center;
+}
+
+.get-started-separator {
+    z-index: 1;
+    display: inline-block;
+    min-width: 30px;
+}
+
+.get-started-button {
+    background-color: #C3F53C;
+    color: black;
+    border-radius: 150px;
+    border: 1px solid black;
+    min-width: 125px;
+    min-height: 47px;
+    font-family: "Capsule Sans Text",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    padding: 3px;
+    margin: 3px;
+    cursor: pointer;
+    position: relative;
+    left: -90px;
+}
+
+.hidden-during-form {
+    display: block;
+}
+
+.hidden-during-form.hidden {
+    display: none;
+}
