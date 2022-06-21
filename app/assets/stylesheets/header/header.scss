@@ -13,6 +13,26 @@ body {
     min-height: 65px;
 }
 
+.header-signed-in {
+    white-space: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    margin: none;
+    min-width: 100%;
+    min-height: 65px;
+}
+
+.header-logo-signed-out {
+    display: inline-block;
+    padding: 3px;
+    margin: 3px;
+    position: relative;
+    top: 2px;
+    margin-left: 30px;
+}
+
 .header-logo-signed-in {
     display: inline-block;
     padding: 3px;
@@ -26,6 +46,29 @@ body {
     display: inline-block;
 }
 
+.header-user {
+    display: inline-block;
+}
+
+.header-user-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 15%;
+    position: relative;
+    left: -290px;
+}
+
+.account {
+    position: relative;
+    left: 185px;
+}
+.header-button {
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    font-weight: bold;
+}
 .header-info-links {
     display: flex;
     justify-content: space-between;
@@ -46,6 +89,11 @@ body {
     font-weight: bold;
 }
 
+.header-name {
+    position: relative;
+    left: 150px;
+}
+
 .header-info-links .learn {
     position: relative;
     left: 27.5%;
@@ -61,6 +109,32 @@ body {
     text-decoration: none;
     color: black;
     font-size: 18px;
+    font-weight: bold;
+}
+
+.header-user-links .rewards {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.header-user-links .portfolio {
+    position: relative;
+    left: 27.5%;
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.header-user-links .cash {
+    position: relative;
+    left: 55%;
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
     font-weight: bold;
 }
 
@@ -98,4 +172,22 @@ body {
     padding: 3px;
     margin: 3px;
     cursor: pointer;
+}
+
+.search-bar-container {
+    max-width: 800px;
+    min-width: 50px;
+    width: 600px;
+    display: inline-block;
+    position: relative;
+    left: 20px;
+}
+
+.search-bar {
+    border-radius: 5px;
+    border: 1px solid rgb(223, 223, 223);
+    color: black;
+    min-width: 100%;
+    min-height: 32px;
+    font-size: 10px;
 }

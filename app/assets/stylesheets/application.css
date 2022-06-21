@@ -14,8 +14,12 @@
  *= require_self
  */
 
- body {
+ html, body {
     background-color: #4a4a4a;
     position: relative;
     height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
  }

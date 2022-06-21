@@ -36,6 +36,15 @@ class SessionForm extends React.Component {
     );
   }
 
+  componentDidMount(){
+    let signup = document.querySelector('.hidden-for-login')
+    if (this.props.formType === 'Sign up'){
+      signup.classList.add('signup')
+    } else {
+      signup.classList.remove('signup')
+    }
+  }
+
   render() {
     return (
       <div className="login-form-container">
@@ -43,9 +52,9 @@ class SessionForm extends React.Component {
           {this.props.imgLeft}
         </div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <br/>
           <div className="login-form">
-            <br/>
+            <div className='form-body'>{this.props.formBody}</div>
+            <br/><br/><br/>
             <label>Email
             <br/>
               <br></br>
@@ -66,6 +75,27 @@ class SessionForm extends React.Component {
                 className="login-input"
               />
             </label>
+            <br/><br/>
+
+            <div className='hidden-for-login'>
+              <label>Full Name
+              <br/><br/>
+                <input type='text'
+                value={this.state.full_name}
+                onChange={this.update('full_name')}
+                className='login-input'
+                />
+              </label>
+              <br/><br/>
+              <label>Address
+                <br/>
+                <input type='text'
+                value={this.state.address}
+                onChange={this.update('address')}
+                className='login-input'
+                />
+              </label>
+            </div>
             <br/>
             <br></br>
             {this.renderErrors()}

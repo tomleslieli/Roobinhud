@@ -8,7 +8,6 @@
     padding: none;
     width: 100%;
     font-size: 10px;
-
 }
 
 .login-input {
@@ -65,4 +64,18 @@
 .login-form-box {
     width: 50%;
     display: inline-block;
+}
+
+.form-body {
+    font-size: 25px;
+    font-weight: bold;
+    max-width: 50%;
+}
+
+.hidden-for-login {
+    display: none;
+}
+
+.hidden-for-login.signup {
+    display: block;
 }
