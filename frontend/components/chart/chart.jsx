@@ -70,7 +70,7 @@ const MyChart = () => {
                             }
                         },
                         tooltip: {
-                            // enabled: false,
+                            enabled: false,
                             mode: 'index',
                             intersect: false
                         },
