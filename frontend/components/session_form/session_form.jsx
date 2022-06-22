@@ -48,7 +48,8 @@ class SessionForm extends React.Component {
     let hidden = document.querySelector('.hidden-during-form')
     if (this.props.formType){
       hidden.classList.add('hidden')
-    } else {
+    } 
+    if (!this.props.formType){
       hidden.classList.remove('hidden')
     }
   }

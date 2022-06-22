@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ChartContainer from '../chart/chart_container'
 
 const Body = ({ currentUser, logout }) => {
   const sessionBody = () => (
@@ -10,7 +11,7 @@ const Body = ({ currentUser, logout }) => {
             </div>
             <div className='get-started-separator'/>
             <div className='get-started-text'>
-                <p>Investing is</p>
+                <p id='investing-is'>Investing is</p>
                 <p>simple here</p>
             <Link to="signup">
             <button className='get-started-button'>Get Started</button>
@@ -30,9 +31,13 @@ const Body = ({ currentUser, logout }) => {
         </div>
     </div>
   );
+
   const personalBody = () => (
-    <>
-    </>
+    <div className='logged-in-body'>
+      <ChartContainer/>
+      {/* <Newsfeed /> */}
+      {/* Portfolio / Watchlists */}
+    </div>
   );
 
   return currentUser ? personalBody() : sessionBody();

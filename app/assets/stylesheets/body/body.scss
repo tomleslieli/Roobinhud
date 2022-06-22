@@ -10,26 +10,35 @@
 
 .phone-animation-container {
     display: inline-block;
+    padding-bottom: -200px;
 }
 
 .phone-animation-container > img {
-    max-height: 80%;
-    max-width: 760px;
-    min-width: 80%;
+    // max-height: 90%;
+    // max-width: 800px;
+    // min-width: 90%;
     position: relative;
     position: relative;
-    top: -144px;
-    margin-bottom: -220px;
+    top: -250px;
+    margin-bottom: -400px;
     margin-top: 30px;
+    max-width: 800px;
+    height: auto;
+    width: auto\9;
     left: 20px;
 }
 
+#investing-is {
+    position: relative;
+    left: -5px;
+}
 .investing-container {
     background: linear-gradient(162deg, rgba(6, 64, 19, 0.7) 0%, rgb(116, 254, 36) 79%, rgb(126, 255, 42) 100%) 100% center / cover, url(https://robinhood-clone-assets.s3.amazonaws.com/noise__d63eaf58eecf93a9e61385dd154fba64.svg) rgb(0, 200, 5);
     height: 800px;
 }
 
 .free-stock-ribbon {
+    z-index: 50;
     height: 62px;
     background-image: linear-gradient(74.84deg,#00C805 18.12%,#C3F53C 81.46%);
     font-family: "Capsule Sans Text",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
@@ -37,7 +46,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 8px;
+    font-size: 10px;
 }
 
 .sign-up {
@@ -48,7 +57,7 @@
 }
 
 .get-started-text {
-    z-index: 0;
+    z-index: 1;
     display: inline-block;
     min-width: 50%;
     font-size: 60px;
@@ -56,6 +65,8 @@
     font-family: "Capsule Sans Text", sans-serif;
     position: relative;
     text-align: center;
+    top: -5px;
+    margin-top: 50px;
 }
 
 .get-started-separator {
@@ -88,4 +99,10 @@
 
 .hidden-during-form.hidden {
     display: none;
+}
+
+.logged-in-body {
+    background-color: white;
+    min-width: 100%;
+    min-height: 100%;
 }
