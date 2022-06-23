@@ -1,0 +1,21 @@
+.stock-info {
+    position: relative;
+    top: 120px;
+    left: 110px;
+    font-family: "Capsu{le Sans Text",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+}
+
+.stock-info h1 {
+    font-size: 40px;
+}
+.stock-info h3 {
+    font-size: 40px;
+}
+.stock-info h6 {
+    font-size: 13px;
+}
+
+.line-chart {
+    position: fixed;
+    left: -350px;
+}

@@ -29,7 +29,7 @@ const App = () => (
     </Switch>
 
     <div className='body-container'>
-    <BodyContainer />
+      <BodyContainer />
     </div>
 
   </div>

@@ -3,111 +3,127 @@ import { Chart as ChartJS, registerables } from 'chart.js';
 import { Line } from 'react-chartjs-2'
 ChartJS.register(...registerables);
 
-const data = 
-[{
-    x:1,
-    y:50
-},{
-    x:2,
-    y:10
-},{
-    x:3,
-    y:50
-},{
-    x:4,
-    y:50
-},{
-    x:5,
-    y:60
-},{
-    x:6,
-    y: 30
-},{
-    x: 7,
-    y: 50
-},{
-    x:8,
-    y:45
-},{ x:9,
-    y:80
-}]
-
-const MyChart = () => {
-
-    return (
-        <>
-            <Line
-                data={{
-                    labels: [1,2,3,4,5,6,7,8,9,10],
-                    datasets: [
-                        {
-                        type: 'line',
-                        data: data,
-                        borderColor: '#5AC53B',
-                        borderWidth: 2,
-                        backgroundColor: 'white',
-                        pointBorderColor: 'rgba(0,0,0,0)',
-                        pointBackgroundColor: 'rgba(0,0,0,0)',
-                        pointHoverBackgroundColor: '#5AC53B',
-                        pointHoverRadius: 6,
-                        }
-                    ]
-                }}
-                options={{
-                    animations: {
-                        tension: {
-                          duration: 1000,
-                          easing: 'linear',
-                          from: .3,
-                          to: 0,
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: false,
-                            labels: {
-                                usePointStyle: true
-                            }
-                        },
-                        tooltip: {
-                            enabled: false,
-                            mode: 'index',
-                            intersect: false
-                        },
-                    },
-                    layout: {
-                        padding: 100
-                    },
-                    scales: {
-                        x: {
-                            gridLines: {
-                                drawBorder: false,
-                                zeroLineColor: 'transparent'
-                            },
-                            ticks: {
-                                display: false
-                            },
-                            grid: {
-                                display: false
-                            },
-                        },
-                        y: {
-                            gridLines: {
-                                drawBorder: false,
-                                zeroLineColor: 'transparent'
-                            },
-                            ticks: {
-                                display: false
-                            },
-                            grid: {
-                                display: false
-                            }
-                        }
+class MyChart extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            xValues: [],
+            yValues: [],
+            combined: [],
+            symbol: ''
+        }
+    }
+    componentDidMount() {
+        this.fetchStock();
+    }
+    fetchStock() {
+        const API_KEY = '1TC1G7P4CUSZNSL2'
+        let ticker = 'TSLA';
+        let API_CALL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&apikey=${API_KEY}`;
+        const that = this;
+        let fetchXValues = [];
+        let fetchYValues = [];
+        let fetchCombined = [];
+        fetch(API_CALL)
+            .then(
+                function(response) {
+                    return response.json();
+            })
+            .then(
+                function(data) {
+                    for (var key in data['Time Series (Daily)']){
+                        fetchXValues.push(key);
+                        fetchYValues.push(data['Time Series (Daily)'][key]['1. open']);
                     }
-                }}
-            />
+                    for (let i = 0; i <= fetchXValues.length; i++){
+                        fetchCombined.push({x: fetchXValues[i], y: fetchYValues[i]})
+                    }
+                    that.setState({
+                        xValues: fetchXValues,
+                        yValues: fetchYValues,
+                        combined: fetchCombined,
+                        symbol: ticker
+                    });
+                }
+            )
+    }
+    render () {
+        return (
+        <>
+            <div className='stock-info'>
+                <h1>{this.state.symbol}</h1>
+                <h3>$00.00</h3>
+                <h6>+$0.00 (-0.00%) Today</h6>
+            </div>
+            <div className='line-chart'>
+                <Line
+                    data={{
+                        labels: this.state.yValues,
+                        datasets: [
+                            {
+                            type: 'line',
+                            data: this.state.combined,
+                            borderColor: '#5AC53B',
+                            borderWidth: 2,
+                            backgroundColor: 'white',
+                            pointBorderColor: 'rgba(0,0,0,0)',
+                            pointBackgroundColor: 'rgba(0,0,0,0)',
+                            pointHoverBackgroundColor: '#5AC53B',
+                            pointHoverRadius: 6,
+                            }
+                        ]
+                    }}
+                    options={{
+                        animations: false,
+                        plugins: {
+                            legend: {
+                                display: false,
+                                labels: {
+                                    usePointStyle: true
+                                }
+                            },
+                            tooltip: {
+                                enabled: false,
+                                mode: 'index',
+                                intersect: false
+                            },
+                        },
+                        layout: {
+                            padding: 100
+                        },
+                        scales: {
+                            x: {
+                                gridLines: {
+                                    drawBorder: false,
+                                    zeroLineColor: 'transparent'
+                                },
+                                ticks: {
+                                    display: false
+                                },
+                                grid: {
+                                    display: false,
+                                    drawBorder: false
+                                },
+                            },
+                            y: {
+                                gridLines: {
+                                    drawBorder: false,
+                                    zeroLineColor: 'transparent'
+                                },
+                                ticks: {
+                                    display: false
+                                },
+                                grid: {
+                                    display: false,
+                                    drawBorder: false
+                                }
+                            }
+                        }
+                    }}
+                />
+            </div>
         </>
-    )
+    )}
 }
 
-export default MyChart;
+export default MyChart
