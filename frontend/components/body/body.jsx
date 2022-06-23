@@ -34,7 +34,7 @@ const Body = ({ currentUser, logout }) => {
 
   const personalBody = () => (
     <div className='logged-in-body'>
-      <ChartContainer/>
+      <ChartContainer store={store}/>
       {/* <Newsfeed /> */}
       {/* Portfolio / Watchlists */}
     </div>

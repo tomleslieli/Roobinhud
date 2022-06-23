@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Chart as ChartJS, registerables } from 'chart.js';
 import { Line } from 'react-chartjs-2'
 ChartJS.register(...registerables);
+// import Item from '../item/item'
 
 class MyChart extends React.Component {
     constructor(props) {
@@ -18,7 +19,7 @@ class MyChart extends React.Component {
     }
     fetchStock() {
         const API_KEY = '1TC1G7P4CUSZNSL2'
-        let ticker = 'TSLA';
+        let ticker = 'GME';
         let API_CALL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&apikey=${API_KEY}`;
         const that = this;
         let fetchXValues = [];
@@ -49,80 +50,92 @@ class MyChart extends React.Component {
     }
     render () {
         return (
-        <>
-            <div className='stock-info'>
-                <h1>{this.state.symbol}</h1>
-                <h3>$00.00</h3>
-                <h6>+$0.00 (-0.00%) Today</h6>
-            </div>
-            <div className='line-chart'>
-                <Line
-                    data={{
-                        labels: this.state.yValues,
-                        datasets: [
-                            {
-                            type: 'line',
-                            data: this.state.combined,
-                            borderColor: '#5AC53B',
-                            borderWidth: 2,
-                            backgroundColor: 'white',
-                            pointBorderColor: 'rgba(0,0,0,0)',
-                            pointBackgroundColor: 'rgba(0,0,0,0)',
-                            pointHoverBackgroundColor: '#5AC53B',
-                            pointHoverRadius: 6,
-                            }
-                        ]
-                    }}
-                    options={{
-                        animations: false,
-                        plugins: {
-                            legend: {
-                                display: false,
-                                labels: {
-                                    usePointStyle: true
+        <div className='dashboard'>
+            <div className='dashboard-left'>
+
+                <div className='stock-info'>
+                    <div className='today'>
+                        <h3>$0.00</h3>
+                        <h6>+$0.00 (-0.00%)</h6>
+                    </div>
+                    <h5>Today</h5>
+                </div>
+                    <div className='line-chart-container'>
+                        <Line className='line-chart'
+                            data={{
+                                datasets: [
+                                    {
+                                    type: 'line',
+                                    data: this.state.combined,
+                                    borderColor: '#5AC53B',
+                                    borderWidth: 2,
+                                    backgroundColor: 'white',
+                                    pointBorderColor: 'rgba(0,0,0,0)',
+                                    pointBackgroundColor: 'rgba(0,0,0,0)',
+                                    pointHoverBackgroundColor: '#5AC53B',
+                                    pointHoverRadius: 6,
+                                    }
+                                ]
+                            }}
+                            options={{
+                                animations: false,
+                                plugins: {
+                                    legend: {
+                                        display: false,
+                                        labels: {
+                                            usePointStyle: true
+                                        }
+                                    },
+                                    tooltip: {
+                                        enabled: false,
+                                        mode: 'index',
+                                        intersect: false
+                                    },
+                                },
+                                layout: {
+                                    padding: 100
+                                },
+                                scales: {
+                                    x: {
+                                        gridLines: {
+                                            drawBorder: false,
+                                            zeroLineColor: 'transparent'
+                                        },
+                                        ticks: {
+                                            display: false
+                                        },
+                                        grid: {
+                                            display: false,
+                                            drawBorder: false
+                                        },
+                                    },
+                                    y: {
+                                        gridLines: {
+                                            drawBorder: false,
+                                            zeroLineColor: 'transparent'
+                                        },
+                                        ticks: {
+                                            display: false
+                                        },
+                                        grid: {
+                                            display: false,
+                                            drawBorder: false
+                                        }
+                                    }
                                 }
-                            },
-                            tooltip: {
-                                enabled: false,
-                                mode: 'index',
-                                intersect: false
-                            },
-                        },
-                        layout: {
-                            padding: 100
-                        },
-                        scales: {
-                            x: {
-                                gridLines: {
-                                    drawBorder: false,
-                                    zeroLineColor: 'transparent'
-                                },
-                                ticks: {
-                                    display: false
-                                },
-                                grid: {
-                                    display: false,
-                                    drawBorder: false
-                                },
-                            },
-                            y: {
-                                gridLines: {
-                                    drawBorder: false,
-                                    zeroLineColor: 'transparent'
-                                },
-                                ticks: {
-                                    display: false
-                                },
-                                grid: {
-                                    display: false,
-                                    drawBorder: false
-                                }
-                            }
-                        }
-                    }}
-                />
+                            }}
+                        />
+                    </div>
             </div>
-        </>
+            <div className='dashboard-right'>
+                <div className='watchlists'>
+                    <h5> Lists </h5>
+                    <div className='item-container'>
+                        {/* <Item/> */}
+                    </div>
+                </div>
+            </div>
+        </div>
     )}
 }
 

@@ -31,7 +31,11 @@ const App = () => (
     <div className='body-container'>
       <BodyContainer />
     </div>
-
+    <footer>
+      <div className='footer'>
+        
+      </div>
+    </footer>
   </div>
 );
 
