@@ -12,14 +12,14 @@ class MyChart extends React.Component {
             yValues: [],
             combined: [],
             symbol: ''
-        }
+        };
+        this.ticker = 'SPY'
     }
     componentDidMount() {
         this.fetchStock();
     }
     fetchStock() {
         const API_KEY = '1TC1G7P4CUSZNSL2'
-        let ticker = 'GME';
         let API_CALL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&apikey=${API_KEY}`;
         const that = this;
         let fetchXValues = [];
@@ -45,10 +45,20 @@ class MyChart extends React.Component {
                         combined: fetchCombined,
                         symbol: ticker
                     });
+                    this.props.dispatch({type: CHARTRECEIVED, 
+                        payload: {
+                        xValues: fetchXValues,
+                        yValues: fetchYValues,
+                        combined: fetchCombined,
+                        symbol: ticker
+                        }
+                    })
                 }
             )
     }
     render () {
+        let ticker = 'SPY';
+        let { combined } = this.props.stocks.stocks[ticker].chart
         return (
         <div className='dashboard'>
             <div className='dashboard-left'>

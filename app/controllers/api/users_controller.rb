@@ -1,6 +1,4 @@
 class Api::UsersController < ApplicationController
-    #remove before production
-    skip_before_action :verify_authenticity_token
     
     def create
         @user = User.new(user_params)
@@ -16,6 +14,6 @@ class Api::UsersController < ApplicationController
     private
     
     def user_params
-        params.require(:user).permit(:email, :password, :full_name, :address)
+        params.require(:user).permit(:email, :full_name, :address, :buying_power, :stocks_value, :password)
     end
 end
