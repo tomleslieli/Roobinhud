@@ -1,23 +1,22 @@
-export const showStock = ticker => (
+export const fetchStock = stockId => (
     $.ajax({
-        url: '/api/stock',
+        url: `/api/stocks/${stockId}`,
         method: 'GET',
-        data: {ticker}
     })
 );
 
-export const purchaseStock = stock => (
+export const createStock = stock => (
     $.ajax({
-        url: '/api/users',
+        url: '/api/stocks',
         method: 'POST',
-        data: {user}
+        data: {stock}
     })
 );
 
-export const removeStock = data => (
+export const updateStock = stock => (
     $.ajax({
-        // url: '/api/session',
+        url: `/api/stocks/${stock.id}`,
         method: 'PATCH',
-        data: {data}
+        data: {stock}
     })
 );

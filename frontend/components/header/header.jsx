@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CreateStockContainer from '../stock/create_stock_container';
 
 const Header = ({ currentUser, logout }) => {
   const sessionLinks = () => (
@@ -37,7 +38,7 @@ const Header = ({ currentUser, logout }) => {
         </Link>
       </div>
       <div className='search-bar-container'>
-        <input className='search-bar' type='text' value='Search'/>
+        <CreateStockContainer store={store}/>
       </div>
       <div className='empty-header-space'/>
       <div className='header-user'>

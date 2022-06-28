@@ -1,33 +1,25 @@
-import * as APIUtil from '../util/session_api_util';
+import * as StockUtil from '../util/stock_api_util';
 
-export const RECEIVEALLSTOCKS = 'RECEIVEALLSTOCKS';
-export const RECEIVESTOCK = 'RECEIVESTOCK';
-export const SELLSTOCK = 'SELLSTOCK';
-export const BUYSTOCK = 'BUYSTOCK';
+export const RECEIVE_STOCK = 'RECEIVE_STOCK';
 
-const fetchAllStocks = stocks => ({
-  type: RECEIVEALLSTOCKS,
-  stocks
-})
-
-const fetchStock = stock => ({
-    type: RECEIVESTOCK,
+const receiveStock = stock => ({
+    type: RECEIVE_STOCK,
     stock
 });
 
-export const receiveStock = stock => dispatch => (
-    APIUtil.viewStock(stock).then(stock => (
-      dispatch(fetchStock(stock))))
+export const fetchStock = stockId => dispatch => (
+  StockUtil.fetchStock(stockId).then(stock => (
+    dispatch(receiveStock(stock))))
+)
 
-  );
-  
-  export const login = stock => dispatch => (
-    APIUtil.login(stock).then(stock => (
-      dispatch(receiveStock(stock))), 
-  );
-  
-  export const logout = () => dispatch => (
-    APIUtil.logout().then(() => (
-      dispatch(logoutCurrentStock())
-    ))
-  );
+export const createStock = stock => dispatch => (
+  StockUtil.createStock(stock).then(stock => (
+    dispatch(receiveStock(stock))
+  ))
+)
+
+export const updateStock = stock => dispatch => (
+  StockUtil.updateStock(stock).then(stock => (
+    dispatch(receiveStock(stock))
+  ))
+)

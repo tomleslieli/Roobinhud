@@ -7,11 +7,11 @@ class Show extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            xValues: [],
-            yValues: [],
-            combined: [],
-            symbol: ''
-        }
+            ticker: '',
+            stock_name: '',
+            x_values: [],
+            y_values: [],
+        },
     }
     componentDidMount() {
         this.fetchStock();

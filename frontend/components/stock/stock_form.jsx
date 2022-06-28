@@ -1,0 +1,81 @@
+import React from 'react';
+
+class StockForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            ticker: '',
+            stockName: '',
+            xValues: [],
+            yValues: [],
+          }
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    update(field){
+        return e => this.setState({
+            [field]: e.currentTarget.value
+        });
+    }
+    fetchStockInfo(ticker) {
+        const API_KEY = '1TC1G7P4CUSZNSL2'
+        let TIMESERIES = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&apikey=${API_KEY}`;
+        let STOCKNAME = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${ticker}&apikey=${API_KEY}`;
+        const that = this;
+        let fetchTicker = ticker;
+        let fetchName = ''
+        let fetchXValues = [];
+        let fetchYValues = [];
+        fetch(TIMESERIES)
+            .then(
+                function(response) {
+                    return response.json();
+            })
+            .then(
+                function(data) {
+                    for (let key in data['Time Series (Daily)']){
+                        fetchXValues.push(key);
+                        fetchYValues.push(data['Time Series (Daily)'][key]['1. open']);
+                    }
+                    that.setState({
+                        ticker: fetchTicker,
+                        xValues: fetchXValues,
+                        yValues: fetchYValues,
+                    });
+                }
+            )
+        fetch(STOCKNAME)
+            .then(
+                function(response) {
+                    return response.json();
+                })
+            .then(
+                function(data) {
+                    fetchName = data['bestMatches'][0]['2. name']
+                    that.setState({
+                        stockName: fetchName
+                    })
+                }
+            )
+    }
+
+    handleSubmit(e){
+        e.preventDefault()
+        this.fetchStockInfo(this.state.ticker)
+        const search = Object.assign({}, this.state);
+        this.props.action(search)
+    }
+
+    render() {
+        return (
+            <>
+                <form onSubmit={this.handleSubmit}>
+                    <input type='text' value={this.state.ticker.toUpperCase()} onChange={this.update('ticker')}/>
+                    <button type='submit'>Search</button>
+                </form>
+            </>
+        );
+    }
+}
+ 
+export default StockForm;

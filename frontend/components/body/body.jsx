@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ChartContainer from '../chart/chart_container'
 
-const Body = ({ currentUser, logout }) => {
+const Body = ({ currentUser }) => {
   const sessionBody = () => (
     <div className='hidden-during-form'>
         <div className='get-started-container'>
@@ -34,7 +34,7 @@ const Body = ({ currentUser, logout }) => {
 
   const personalBody = () => (
     <div className='logged-in-body'>
-      <ChartContainer store={store}/>
+      {/* <ChartContainer store={store}/> */}
       {/* <Newsfeed /> */}
       {/* Portfolio / Watchlists */}
     </div>

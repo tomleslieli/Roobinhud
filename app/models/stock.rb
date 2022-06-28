@@ -1,5 +1,5 @@
 class Stock < ApplicationRecord
-    validates :ticker, :stock_name, :x_values, :y_value, :charts, presence: true
+    validates :ticker, :stock_name, :x_values, :y_values, presence: true
     validates :ticker, :stock_name, uniqueness: true
 
     has_many :watchlists,
