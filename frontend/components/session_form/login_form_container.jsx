@@ -10,7 +10,7 @@ const mSTP = ({ errors }) => {
     formType: 'Log in',
     formBody: 'Log in to Robinhood',
     navHelper: 'Not on Robinhood?',
-    navLink: <Link to="/signup">Create an account</Link>,
+    navLink: <Link to="/signup"><span className='create-account'>Create an account</span></Link>,
     imgLeft: <img src='https://robinhood-clone-assets.s3.amazonaws.com/login-left-image.jpeg' alt='login-form-left' width='100%'/>,
   };
 };

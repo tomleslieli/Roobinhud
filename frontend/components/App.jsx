@@ -16,7 +16,8 @@ import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
-  <div>
+
+  <div className='app'>
     <header>
       <div className='header-container'>
         <HeaderContainer />
@@ -26,11 +27,9 @@ const App = () => (
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+      <BodyContainer />
     </Switch>
 
-    <div className='body-container'>
-      <BodyContainer />
-    </div>
     <footer>
       <div className='footer'>
         

@@ -1,19 +1,39 @@
 //= require_tree .
 //= require_self
 
- html, body {
-    background-color: #e3e3e3;
-    position: relative;
-    height: 100%;
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden; 
- }
+#root {
+   display: inline-block;
+   height: 800px;
+   background-color: white;
+   margin: none;
+   padding: none;
+}
+
+.app {
+   height: 100%;
+   background-color: white;
+   margin: none;
+   padding: none;
+}
+//  html, body {
+//     background-color: #e3e3e3;
+//     position: relative;
+//     height: 100%;
+//     width: 100%;
+//     margin: 0px;
+//     padding: 0px;
+//     overflow-x: hidden; 
+//  }
+
 
  body {
    z-index: -2;
+   height: 100%;
  }
+
+#root {
+   width: 100%;
+}
 
  .header-container {
    z-index: 20;
@@ -26,7 +46,12 @@
 }
 
 footer {
-   width: 100%;
+   display: inline-block;
+   height: 100%;
+}
+
+.footer {
+   display: inline-block;
    height: 800px;
    background-color: white;
    margin: none;

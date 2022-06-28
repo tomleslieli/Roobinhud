@@ -28,9 +28,11 @@ class SessionForm extends React.Component {
     return(
       <ul>
         {this.props.errors.map((error, i) => (
+          <div className='error-item'>
           <li key={`error-${i}`}>
             {error}
           </li>
+          </div>
         ))}
       </ul>
     );
@@ -43,14 +45,6 @@ class SessionForm extends React.Component {
     } else {
       signup.classList.remove('signup')
     }
-  
-    let hidden = document.querySelector('.hidden-during-form')
-    if (this.props.formType){
-      hidden.classList.add('hidden')
-    } 
-    if (!this.props.formType){
-      hidden.classList.remove('hidden')
-    }
   }
   
 
@@ -58,7 +52,9 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <div className='login-form-left'>
-          {this.props.imgLeft}
+          <div className='login-form-image-container'>
+              {this.props.imgLeft}
+          </div>
         </div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <div className="login-form">
@@ -107,7 +103,9 @@ class SessionForm extends React.Component {
             </div>
             <br/>
             <br></br>
+            <div className='session-errors'>
             {this.renderErrors()}
+            </div>
             <input className="session-submit" type="submit" value={this.props.formType} />
             <br></br><br></br>
             <div className='helper-link'>

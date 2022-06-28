@@ -9,7 +9,7 @@
     min-width: 100%;
     max-height: 50px;
     min-height: 65px;
-    position: absolute;
+    position: fixed;
     flex-wrap: nowrap;
 }
 
@@ -81,12 +81,6 @@
     align-items: center;
     margin-left: 12%;
 }
-
-.empty-header-space {
-    display: inline-block;
-    min-width: 70%;
-    margin-right: -300px;
-}
 .header-info-links .invest {
     position: relative;
     text-decoration: none;
@@ -118,6 +112,7 @@
     color: black;
     font-size: 18px;
     font-family: "Capsule Sans Text",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    margin-right: 80px;
 }
 
 .header-user-links .rewards {
@@ -153,6 +148,10 @@
     display: inline-block;
     position: relative;
     left: -10px;
+}
+
+.login-signup {
+    display:flex;
     flex-wrap: nowrap;
 }
 
@@ -189,20 +188,25 @@
 }
 
 .search-bar-container {
-    max-width: 800px;
-    min-width: 50px;
-    width: 600px;
-    display: inline-block;
     position: relative;
-    left: 20px;
+    left: -8%;
+    min-width: 80%;
+    display: flex;
+    justify-content: center;
+    margin-left: 7px;
 }
 
 .search-bar {
     border-radius: 5px;
     border: 1px solid rgb(223, 223, 223);
     color: black;
-    min-width: 100%;
-    min-height: 32px;
+    min-height: 30px;
+    min-width: 400px;
     font-size: 10px;
 }
 
+.header-info-container {
+    width: 100%;
+    display: flex;
+    margin-right: 100px;
+}

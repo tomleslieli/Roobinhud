@@ -12,6 +12,10 @@ class StockForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    // componentDidMount(){
+        // Stock search helper
+    // }
+
     update(field){
         return e => this.setState({
             [field]: e.currentTarget.value
@@ -22,7 +26,7 @@ class StockForm extends React.Component {
         let TIMESERIES = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&apikey=${API_KEY}`;
         let STOCKNAME = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${ticker}&apikey=${API_KEY}`;
         const that = this;
-        let fetchTicker = ticker;
+        let fetchTicker = ticker.toUpperCase();
         let fetchName = ''
         let fetchXValues = [];
         let fetchYValues = [];
@@ -68,12 +72,9 @@ class StockForm extends React.Component {
 
     render() {
         return (
-            <>
                 <form onSubmit={this.handleSubmit}>
-                    <input type='text' value={this.state.ticker.toUpperCase()} onChange={this.update('ticker')}/>
-                    <button type='submit'>Search</button>
+                    <input className='search-bar' type='text' value={this.state.ticker.toUpperCase()} onChange={this.update('ticker')}/>
                 </form>
-            </>
         );
     }
 }

@@ -1,6 +1,7 @@
 .get-started-container {
     background-color: #004022;
     height: 800px;
+    width: 100%;
     white-space: none;
     display: flex;
     align-items: center;
@@ -13,13 +14,13 @@
     padding-bottom: -200px;
 }
 
-.phone-animation-container > img {
+.phone-animation-container img {
     position: relative;
     position: relative;
     top: -250px;
     margin-bottom: -400px;
     margin-top: 30px;
-    max-width: 800px;
+    max-width: 900px;
     height: auto;
     width: auto\9;
     left: 20px;
@@ -50,7 +51,7 @@
     max-height: 800px;
 }
 .sign-up img {
-    width: 100%;
+    min-width: 100%;
 }
 
 .get-started-text {

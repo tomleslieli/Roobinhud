@@ -20,7 +20,7 @@ const Body = ({ currentUser }) => {
         </div>
         <div className='free-stock-ribbon'>
             <div>
-                <p>Get your free stock free. Limitations apply.</p>
+                <p>Get your first stock free. Limitations apply.</p>
             </div>
         </div>
         <div className='investing-container'>

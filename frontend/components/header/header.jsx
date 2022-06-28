@@ -10,14 +10,15 @@ const Header = ({ currentUser, logout }) => {
           <img src='https://robinhood-clone-assets.s3.amazonaws.com/logo_full_black.png' alt='logo-full-black' width='135px'/>
         </Link>
       </div>
-      <div className='header-info'>
-        <span className='header-info-links'>
-        <Link to='/' id='link' className='invest'>Invest</Link>
-        <Link to='/' id='link' className = 'learn'>Learn</Link>
-        <Link to='/' id='link' className='support'>Support</Link>
-        </span>
+      <div className='header-info-container'>
+        <div className='header-info'>
+          <span className='header-info-links'>
+          <Link to='/' id='link' className='invest'>Invest</Link>
+          <Link to='/' id='link' className = 'learn'>Learn</Link>
+          <Link to='/' id='link' className='support'>Support</Link>
+          </span>
+        </div>
       </div>
-      <div className='empty-header-space'/>
       <div className='header-login-signup'>
         <nav className="login-signup">
           <Link to="/login">
@@ -40,7 +41,6 @@ const Header = ({ currentUser, logout }) => {
       <div className='search-bar-container'>
         <CreateStockContainer store={store}/>
       </div>
-      <div className='empty-header-space'/>
       <div className='header-user'>
         <span className='header-user-links'>
         <Link to='/' id='link' className='rewards'>Rewards</Link>
