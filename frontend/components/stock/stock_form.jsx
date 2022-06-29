@@ -1,6 +1,6 @@
 import React from 'react';
-import {createStock, updateStock} from '../../actions/stock_actions'
-import { useDispatch } from 'react-redux'
+// import {createStock, updateStock} from '../../actions/stock_actions'
+// import { useDispatch } from 'react-redux'
 
 class StockForm extends React.Component {
     constructor(props) {
@@ -12,6 +12,8 @@ class StockForm extends React.Component {
             yValues: [],
           }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.fetchStockInfo = this.fetchStockInfo.bind(this);
+
     }
     // componentDidMount(){
         // Stock search helper
@@ -64,12 +66,25 @@ class StockForm extends React.Component {
                     })
                 }
             )
+        // .then(
+        //     function(){
+        //         // console.log('IN FETCHSTOCKINFO',that.props)
+        //         that.props.action({...that.state}) 
+        //     }
+        // )
     }
 
     handleSubmit(e){
         e.preventDefault()
         this.fetchStockInfo(this.state.ticker)
-        this.props.action({...this.state})
+        // console.log('IN HANDLE SUBMIT', this.state)
+        // this.props.action({...this.state})
+    }
+
+    componentDidUpdate(prevProps, prevState){
+        if(prevState !== this.state){
+            this.props.action({...this.state})
+        }
     }
 
     // handleSubmit = async(e) => {
@@ -83,7 +98,6 @@ class StockForm extends React.Component {
     // }
 
     render() {
-        console.log(this.state)
         return (
                 <form onSubmit={this.handleSubmit}>
                     <input className='search-bar' type='text' value={this.state.ticker.toUpperCase()} onChange={this.update('ticker')}/>

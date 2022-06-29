@@ -3,9 +3,11 @@ import { RECEIVE_STOCK } from '../actions/stock_actions';
 
 const stocksReducer = (state = {}, action) => {
   Object.freeze(state);
+  console.log('STOCKSREDUCER REACHED', action)
   switch(action.type) {
     case RECEIVE_STOCK:
-      return (state, {[action.stock.id]: action.stock });
+      console.log('RECEIVESTOCK IN REDUCER!!!',action)
+      return (state, {[action.stock.ticker]: action.stock });
     default:
       return state
   }

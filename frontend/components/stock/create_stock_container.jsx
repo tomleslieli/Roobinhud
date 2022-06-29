@@ -13,7 +13,10 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
   fetchStock: stockId => dispatch(fetchStock(stockId)),
-  action: stock => dispatch(createStock(stock))
+  action: stock => {
+    console.log('STOCK IN ACTION',stock);
+    dispatch(createStock(stock))
+  }
 });
 
 export default connect(mSTP, mDTP)(StockForm);

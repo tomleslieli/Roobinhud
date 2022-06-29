@@ -1,13 +1,22 @@
 class Api::StocksController < ApplicationController
     skip_before_action :verify_authenticity_token
+    before_action :snake_case_params
+
+    def serialize(stock)
+        V1::StockSerializer.new(@stock)
+    end
+
 
     def show
         @stock = Stock.find(params[:id])
     end
 
     def create
+        puts 'WE ARE IN THE CREATE FUNCTION'
         @stock = Stock.new(stock_params)
+        puts @stock
         if @stock.save
+            puts 'STOCK HAS BEEN SAVED'
             render :show
         else
             render json: 'No results found.'

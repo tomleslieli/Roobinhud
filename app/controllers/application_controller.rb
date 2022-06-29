@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
     helper_method :current_user, :logged_in?
+	before_action :snake_case_params
 
     private
 
@@ -28,5 +29,9 @@ class ApplicationController < ActionController::Base
         unless current_user
             render json: { base: ['Invalid Credentials'] }, status: 401
         end
+    end
+
+    def snake_case_params
+        request.parameters.deep_transform_keys!(&:underscore)
     end
 end
