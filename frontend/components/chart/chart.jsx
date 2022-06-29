@@ -137,14 +137,6 @@ class MyChart extends React.Component {
                         />
                     </div>
             </div>
-            <div className='dashboard-right'>
-                <div className='watchlists'>
-                    <h5> Lists </h5>
-                    <div className='item-container'>
-                        {/* <Item/> */}
-                    </div>
-                </div>
-            </div>
         </div>
     )}
 }

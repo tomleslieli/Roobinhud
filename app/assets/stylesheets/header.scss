@@ -1,12 +1,22 @@
+header {
+    max-width: 100%;
+    min-height: 50px;
+}
+
+.header-container {
+    max-width: 100%;
+    min-height: 50px;
+}
+
 .header-signed-out {
     z-index: 1000;
     white-space: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: white;
-    margin: none;
+    background-color: rgb(255, 255, 255);
     min-width: 100%;
+    max-width: 100%;
     max-height: 50px;
     min-height: 65px;
     position: fixed;
@@ -20,11 +30,11 @@
     align-items: center;
     justify-content: space-between;
     background-color: white;
-    margin: none;
     min-width: 100%;
+    max-width: 100%;
     min-height: 65px;
     max-height: 50px;
-    position: absolute;
+    position: fixed;
     flex-wrap: nowrap;
 }
 
@@ -61,6 +71,21 @@
     margin-left: 15%;
     position: relative;
     left: -220px;
+}
+
+@media (max-width: 1100px) {
+    .header-continer {
+        max-width: 100%;
+    }
+    .header-info {
+        display: none;
+    }
+    .login-button {
+        display: none;
+    }
+    .signup-button {
+        display: none;
+    }
 }
 
 .account {

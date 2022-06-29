@@ -8,6 +8,7 @@ const mSTP = (state, ownProps) => ({
 });
 
 const mDTP = dispatch => ({
+  fetchStock: stockId => dispatch(fetchStock(stockId)),
   action: stock => dispatch(updateStock(stock))
 });
 

@@ -12,6 +12,7 @@ const mSTP = state => ({
 });
 
 const mDTP = dispatch => ({
+  fetchStock: stockId => dispatch(fetchStock(stockId)),
   action: stock => dispatch(createStock(stock))
 });
 

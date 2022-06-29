@@ -3,15 +3,15 @@ import { Chart as ChartJS, registerables } from 'chart.js';
 import { Line } from 'react-chartjs-2'
 ChartJS.register(...registerables);
 
-class Show extends React.Component {
+class ShowStock extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             ticker: '',
             stock_name: '',
             x_values: [],
-            y_values: [],
-        },
+            y_values: []
+        }
     }
     componentDidMount() {
         this.fetchStock();
@@ -49,81 +49,94 @@ class Show extends React.Component {
     }
     render () {
         return (
-        <>
-            <div className='stock-info'>
-                <h1>{this.state.symbol}</h1>
-                <h3>$00.00</h3>
-                <h6>+$0.00 (-0.00%) Today</h6>
-            </div>
-            <div className='line-chart'>
-                <Line
-                    data={{
-                        labels: this.state.yValues,
-                        datasets: [
-                            {
-                            type: 'line',
-                            data: this.state.combined,
-                            borderColor: '#5AC53B',
-                            borderWidth: 2,
-                            backgroundColor: 'white',
-                            pointBorderColor: 'rgba(0,0,0,0)',
-                            pointBackgroundColor: 'rgba(0,0,0,0)',
-                            pointHoverBackgroundColor: '#5AC53B',
-                            pointHoverRadius: 6,
-                            }
-                        ]
-                    }}
-                    options={{
-                        animations: false,
-                        plugins: {
-                            legend: {
-                                display: false,
-                                labels: {
-                                    usePointStyle: true
+        <div className='dashboard'>
+            <div className='dashboard-left'>
+                <div className='stock-info'>
+                    <h1>{this.state.symbol}</h1>
+                    <h3>$00.00</h3>
+                    <h6>+$0.00 (-0.00%) Today</h6>
+                </div>
+                <br/>
+                <div className='line-chart'>
+                    <Line
+                        height='600px'
+                        width='1000px'
+                        data={{
+                            labels: this.state.yValues,
+                            datasets: [
+                                {
+                                type: 'line',
+                                data: this.state.combined,
+                                borderColor: '#5AC53B',
+                                borderWidth: 2,
+                                backgroundColor: 'white',
+                                pointBorderColor: 'rgba(0,0,0,0)',
+                                pointBackgroundColor: 'rgba(0,0,0,0)',
+                                pointHoverBackgroundColor: '#5AC53B',
+                                pointHoverRadius: 6,
                                 }
-                            },
-                            tooltip: {
-                                enabled: false,
-                                mode: 'index',
-                                intersect: false
-                            },
-                        },
-                        layout: {
-                            padding: 100
-                        },
-                        scales: {
-                            x: {
-                                gridLines: {
-                                    drawBorder: false,
-                                    zeroLineColor: 'transparent'
-                                },
-                                ticks: {
-                                    display: false
-                                },
-                                grid: {
+                            ]
+                        }}
+                        options={{
+                            animations: false,
+                            plugins: {
+                                legend: {
                                     display: false,
-                                    drawBorder: false
+                                    labels: {
+                                        usePointStyle: true
+                                    }
+                                },
+                                tooltip: {
+                                    enabled: false,
+                                    mode: 'index',
+                                    intersect: false
                                 },
                             },
-                            y: {
-                                gridLines: {
-                                    drawBorder: false,
-                                    zeroLineColor: 'transparent'
+                            layout: {
+                                padding: 100
+                            },
+                            scales: {
+                                x: {
+                                    gridLines: {
+                                        drawBorder: false,
+                                        zeroLineColor: 'transparent'
+                                    },
+                                    ticks: {
+                                        display: false
+                                    },
+                                    grid: {
+                                        display: false,
+                                        drawBorder: false
+                                    },
                                 },
-                                ticks: {
-                                    display: false
-                                },
-                                grid: {
-                                    display: false,
-                                    drawBorder: false
+                                y: {
+                                    gridLines: {
+                                        drawBorder: false,
+                                        zeroLineColor: 'transparent'
+                                    },
+                                    ticks: {
+                                        display: false
+                                    },
+                                    grid: {
+                                        display: false,
+                                        drawBorder: false
+                                    }
                                 }
                             }
-                        }
-                    }}
-                />
+                        }}
+                    />
+                </div>
             </div>
-        </>
+            <div className='dashboard-right'>
+                <div className='watchlists'>
+                    <h5> Lists </h5>
+                    <div className='item-container'>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
     )}
 }
 
-export default Show;
+export default ShowStock;

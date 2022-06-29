@@ -1,18 +1,17 @@
 class Api::StocksController < ApplicationController
     skip_before_action :verify_authenticity_token
 
-    def index
-        @stocks = Stock.all
-        render :index
-    end
-
     def show
         @stock = Stock.find(params[:id])
     end
 
     def create
         @stock = Stock.new(stock_params)
-        @stock.save
+        if @stock.save
+            render :show
+        else
+            render json: 'No results found.'
+        end
     end
 
     def update
@@ -23,6 +22,6 @@ class Api::StocksController < ApplicationController
     private
 
     def stock_params
-        params.require(:stock).permit(:ticker, :stock_name, :x_values, :y_values)
+        params.require(:stock).permit(:ticker, :stock_name, :x_values => [], :y_values => [])
     end
 end

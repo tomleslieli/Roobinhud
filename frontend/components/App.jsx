@@ -32,7 +32,6 @@ const App = () => (
 
     <footer>
       <div className='footer'>
-        
       </div>
     </footer>
   </div>
