@@ -15,6 +15,9 @@ class Api::StocksController < ApplicationController
         puts 'WE ARE IN THE CREATE FUNCTION'
         # debugger
         @stock = Stock.new(stock_params)
+        debugger
+        puts 'THESE ARE THE PARAMS'
+        puts stock_params
         if @stock.save
             puts 'STOCK HAS BEEN SAVED'
             render :show
@@ -32,6 +35,8 @@ class Api::StocksController < ApplicationController
     private
 
     def stock_params
-        params.require(:stock).permit(:ticker, :stock_name, :x_values => [], :y_values => [])
+        params.require(:stock).permit(:ticker, :stock_name,
+        :x_values => [], :y_values => []
+        )
     end
 end

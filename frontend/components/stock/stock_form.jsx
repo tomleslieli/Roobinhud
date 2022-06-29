@@ -25,8 +25,8 @@ class StockForm extends React.Component {
         let createdObject = {}
         let fetchTicker = ticker;
         let fetchName = ''
-        let fetchXValues = [];
-        let fetchYValues = [];
+        let x_values = [];
+        let y_values = [];
         fetch(TIMESERIES)
             .then(
                 function(response) {
@@ -35,8 +35,8 @@ class StockForm extends React.Component {
             .then(
                 function(data) {
                     for (let key in data['Time Series (Daily)']){
-                        fetchXValues.push(key);
-                        fetchYValues.push(data['Time Series (Daily)'][key]['1. open']);
+                        x_values.push(key);
+                        y_values.push(data['Time Series (Daily)'][key]['1. open']);
                     }
                 }
             )
@@ -55,8 +55,8 @@ class StockForm extends React.Component {
                 function() {
                     createdObject.ticker = fetchTicker;
                     createdObject.stockName = fetchName;
-                    createdObject.fetchXValues = fetchXValues;
-                    createdObject.fetchYValues = fetchYValues;
+                    createdObject.x_values = x_values;
+                    createdObject.y_values = y_values;
                     })
             // .then(
             //     function() {
@@ -81,9 +81,21 @@ class StockForm extends React.Component {
         // console.log('THIS IS THE REF123',ref)
         let ref = await this.createAPIObject(this.state.ticker)
         // let ref = JSON.stringify({stock: this.createAPIObject(this.state.ticker)})
-        console.log(ref)
-        debugger
-        this.props.action(ref)
+        setTimeout(()=>{
+            console.log('X VALUES',ref.x_values, ref.y_values)
+            // if (
+            //     typeof ref === 'object' && typeof ref.then === 'function'
+            // ){
+            //     console.log('THIS IS A PROMISE!!!')
+            // } else {
+            //     console.log('this is not a promise')
+            // }
+            // console.log(ref)
+            // console.log('PROPS',this.props)
+            // console.log('PROPS.DISPATCH',this.props.dispatch)
+            this.props.action(ref, ref.x_values, ref.y_values)
+        },1000)
+        // debugger
     }
 
     // componentWillUnmount(){

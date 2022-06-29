@@ -5,12 +5,16 @@ export const fetchStock = stockId => (
     })
 );
 
-export const createStock = stock => (
+export const createStock = (stock, xValues, yValues) => (
     // console.log('IN STOCK API UTIL', stock)
     $.ajax({
         url: '/api/stocks',
         method: 'POST',
-        data: {stock}
+        data: {
+            stock: stock,
+            x_values: xValues,
+            y_values: yValues
+        }
     })
 );
 

@@ -19,8 +19,8 @@ class ShowStock extends React.Component {
         const { stock, user } = this.props
         let combined = [];
         
-        for (let i = 0; i <= stock.xValues.length; i++){
-        combined.push({x: stock.xValues[i], y: stock.yValues[i]})
+        for (let i = 0; i <= stock.x_values.length; i++){
+        combined.push({x: stock.x_values[i], y: stock.y_values[i]})
         
         return(
             <div className='dashboard'>
