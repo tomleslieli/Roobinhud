@@ -9,7 +9,7 @@ const receiveStock = stock => ({
 
 export const fetchStock = stockId => dispatch => (
   StockUtil.fetchStock(stockId).then(stock => 
-    dispatch(receiveStock(stock))
+    dispatch(receiveStock(ticker))
     )
 )
 
@@ -17,8 +17,8 @@ export const createStock = stock => dispatch => {
   console.log('CREATESTOCK ACTION REACHED')
   console.log(stock)
   console.log('END CREATESTOCK')
-  dispatch(receiveStock(stock))
-  StockUtil.createStock(stock)
+  let res = StockUtil.createStock(stock)
+  dispatch(receiveStock(res))
 }
 
 export const updateStock = stock => dispatch => (

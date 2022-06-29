@@ -14,12 +14,12 @@ class Api::StocksController < ApplicationController
     def create
         puts 'WE ARE IN THE CREATE FUNCTION'
         @stock = Stock.new(stock_params)
-        puts @stock
         if @stock.save
             puts 'STOCK HAS BEEN SAVED'
             render :show
         else
-            render json: 'No results found.'
+            puts 'REDIRECTING ANYWAYS'
+            render :show
         end
     end
 

@@ -5,12 +5,14 @@ import { fetchStock } from '../../actions/stock_actions';
 import ShowStock from './show_stock';
 
 
-const mSTP = state => ({
-    stock: state.stocks[ownProps.match.params.stockId],
+const mSTP = (state, ownProps) => ({
+    stock: state.entities.stocks[ownProps.match.params.ticker],
+    user: state.entities.users[state.session.id]
 });
 
 const mDTP = dispatch => ({
-  fetchStock: stockId => dispatch(fetchStock(stockId)),
+  fetchStock: ticker => dispatch(fetchStock(ticker)),
+  fetchUser: userId => dispatch(fetchUser(userId)),
 });
 
 export default connect(mSTP, mDTP)(ShowStock);

@@ -37,7 +37,7 @@ const Body = ({ currentUser }) => {
 
   const personalBody = () => (
     <div className='logged-in-body'>
-      <h1>HELLO!!</h1>
+
     </div>
   );
 

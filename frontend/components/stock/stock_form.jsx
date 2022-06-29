@@ -10,6 +10,7 @@ class StockForm extends React.Component {
             xValues: [],
             yValues: [],
           }
+        // const history = useHistory();
         this.handleSubmit = this.handleSubmit.bind(this);
         this.fetchStockInfo = this.fetchStockInfo.bind(this);
     }
@@ -63,15 +64,24 @@ class StockForm extends React.Component {
             )
     }
 
+    // handleSubmit(e){
+    //     e.preventDefault()
+    //     e.stopPropagation();
+    //     this.fetchStockInfo(this.state.ticker)
+    //     this.props.action({...this.state}) 
+    //     this.props.history.push(`/api/stocks/${this.state.id}`)
+    // }
+
     handleSubmit(e){
         e.preventDefault()
         e.stopPropagation();
+        console.log('IN HANDLESUBMIT', this.state);
         this.fetchStockInfo(this.state.ticker)
-        const history = useHistory();
-        history.push('/show');
+        this.props.history.push(`/api/stocks/${this.state.id}`)
     }
 
     componentDidUpdate(prevProps, prevState){
+        console.log('IN COMPONENTDIDUPDATE',this.state)
         if(prevState !== this.state){
             this.props.action({...this.state})
         }

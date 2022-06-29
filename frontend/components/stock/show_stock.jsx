@@ -4,15 +4,24 @@ import { Line } from 'react-chartjs-2'
 import { Link } from 'react-router-dom';
 ChartJS.register(...registerables);
 
-const ShowStock ({currentUser}) {
+class ShowStock extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            currentPrice: 0.0,
+            twentyFourHours: 0.0,
+        }
+    }
     componentDidMount() {
         this.props.fetchStock(this.props.match.params.stockId);
     }
     render() {
+        const { stock, user } = this.props
         let combined = [];
-        const { stock } = this.props
+        
         for (let i = 0; i <= stock.xValues.length; i++){
         combined.push({x: stock.xValues[i], y: stock.yValues[i]})
+        
         return(
             <div className='dashboard'>
             <div className='dashboard-left'>

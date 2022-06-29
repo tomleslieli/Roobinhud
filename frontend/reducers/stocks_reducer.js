@@ -7,7 +7,7 @@ const stocksReducer = (state = {}, action) => {
   switch(action.type) {
     case RECEIVE_STOCK:
       console.log('RECEIVESTOCK IN REDUCER!!!',action)
-      return (state, {[action.stock.ticker]: action.stock });
+      return (state, {[action.stockId]: action.stock });
     default:
       return state
   }
