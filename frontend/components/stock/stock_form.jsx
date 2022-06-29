@@ -1,6 +1,5 @@
 import React from 'react';
-// import {createStock, updateStock} from '../../actions/stock_actions'
-// import { useDispatch } from 'react-redux'
+import { useHistory } from "react-router-dom";
 
 class StockForm extends React.Component {
     constructor(props) {
@@ -13,12 +12,8 @@ class StockForm extends React.Component {
           }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.fetchStockInfo = this.fetchStockInfo.bind(this);
-
     }
-    // componentDidMount(){
-        // Stock search helper
-    // }
-
+    
     update(field){
         return e => this.setState({
             [field]: e.currentTarget.value
@@ -66,19 +61,14 @@ class StockForm extends React.Component {
                     })
                 }
             )
-        // .then(
-        //     function(){
-        //         // console.log('IN FETCHSTOCKINFO',that.props)
-        //         that.props.action({...that.state}) 
-        //     }
-        // )
     }
 
     handleSubmit(e){
         e.preventDefault()
+        e.stopPropagation();
         this.fetchStockInfo(this.state.ticker)
-        // console.log('IN HANDLE SUBMIT', this.state)
-        // this.props.action({...this.state})
+        const history = useHistory();
+        history.push('/show');
     }
 
     componentDidUpdate(prevProps, prevState){
@@ -86,16 +76,6 @@ class StockForm extends React.Component {
             this.props.action({...this.state})
         }
     }
-
-    // handleSubmit = async(e) => {
-    //     e.preventDefault()
-    //     this.fetchStockInfo(this.state.ticker)
-    //     let currentState = {...this.state}
-    //     let step = await createStock(currentState)
-    //     const dispatch = useDispatch()
-    //     let result = dispatch(receiveStock(step.data));
-    //     this.props.action({...this.state})
-    // }
 
     render() {
         return (

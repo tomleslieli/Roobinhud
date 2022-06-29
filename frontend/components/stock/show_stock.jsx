@@ -1,55 +1,20 @@
 import React, {useState, useEffect} from 'react';
 import { Chart as ChartJS, registerables } from 'chart.js';
 import { Line } from 'react-chartjs-2'
+import { Link } from 'react-router-dom';
 ChartJS.register(...registerables);
 
-class ShowStock extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            ticker: '',
-            stock_name: '',
-            x_values: [],
-            y_values: []
-        }
-    }
+const ShowStock ({currentUser}) {
     componentDidMount() {
-        this.fetchStock();
+        this.props.fetchStock(this.props.match.params.stockId);
     }
-    fetchStock() {
-        const API_KEY = '1TC1G7P4CUSZNSL2'
-        let ticker = 'GME';
-        let API_CALL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&apikey=${API_KEY}`;
-        const that = this;
-        let fetchXValues = [];
-        let fetchYValues = [];
-        let fetchCombined = [];
-        fetch(API_CALL)
-            .then(
-                function(response) {
-                    return response.json();
-            })
-            .then(
-                function(data) {
-                    for (var key in data['Time Series (Daily)']){
-                        fetchXValues.push(key);
-                        fetchYValues.push(data['Time Series (Daily)'][key]['1. open']);
-                    }
-                    for (let i = 0; i <= fetchXValues.length; i++){
-                        fetchCombined.push({x: fetchXValues[i], y: fetchYValues[i]})
-                    }
-                    that.setState({
-                        xValues: fetchXValues,
-                        yValues: fetchYValues,
-                        combined: fetchCombined,
-                        symbol: ticker
-                    });
-                }
-            )
-    }
-    render () {
-        return (
-        <div className='dashboard'>
+    render() {
+        let combined = [];
+        const { stock } = this.props
+        for (let i = 0; i <= stock.xValues.length; i++){
+        combined.push({x: stock.xValues[i], y: stock.yValues[i]})
+        return(
+            <div className='dashboard'>
             <div className='dashboard-left'>
                 <div className='stock-info'>
                     <h1>{this.state.symbol}</h1>
@@ -66,7 +31,7 @@ class ShowStock extends React.Component {
                             datasets: [
                                 {
                                 type: 'line',
-                                data: this.state.combined,
+                                data: combined,
                                 borderColor: '#5AC53B',
                                 borderWidth: 2,
                                 backgroundColor: 'white',
@@ -135,8 +100,9 @@ class ShowStock extends React.Component {
                     </div>
                 </div>
             </div>
-        </div>
-    )}
+            </div>
+        )}
+    }
 }
 
-export default ShowStock;
+export default ShowStock

@@ -13,6 +13,7 @@ import HeaderContainer from './header/header_container';
 import BodyContainer from './body/body_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
+import ShowStockContainer from './stock/show_stock_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
@@ -27,6 +28,7 @@ const App = () => (
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+      <ShowStockContainer/>
       <BodyContainer />
     </Switch>
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import { updateStock } from '../../actions/stock_actions';
 import StockForm from './stock_form';

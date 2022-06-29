@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ShowStock from '../stock/show_stock'
 
 const Body = ({ currentUser }) => {
   const sessionBody = () => (
@@ -38,9 +37,7 @@ const Body = ({ currentUser }) => {
 
   const personalBody = () => (
     <div className='logged-in-body'>
-      <ShowStock store={store}/>
-      {/* <Newsfeed /> */}
-      {/* Portfolio / Watchlists */}
+      <h1>HELLO!!</h1>
     </div>
   );
 
