@@ -13,6 +13,7 @@ class Api::StocksController < ApplicationController
 
     def create
         puts 'WE ARE IN THE CREATE FUNCTION'
+        # debugger
         @stock = Stock.new(stock_params)
         if @stock.save
             puts 'STOCK HAS BEEN SAVED'

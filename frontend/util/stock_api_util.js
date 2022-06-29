@@ -5,14 +5,14 @@ export const fetchStock = stockId => (
     })
 );
 
-export const createStock = stock => {
-    console.log('IN STOCK API UTIL', stock)
+export const createStock = stock => (
+    // console.log('IN STOCK API UTIL', stock)
     $.ajax({
         url: '/api/stocks',
         method: 'POST',
         data: {stock}
     })
-};
+);
 
 export const updateStock = stock => (
     $.ajax({

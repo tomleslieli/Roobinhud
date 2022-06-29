@@ -5,14 +5,11 @@ class StockForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            ticker: '',
-            stockName: '',
-            xValues: [],
-            yValues: [],
+            ticker: ''
           }
         // const history = useHistory();
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.fetchStockInfo = this.fetchStockInfo.bind(this);
+        this.createAPIObject = this.createAPIObject.bind(this);
     }
     
     update(field){
@@ -20,12 +17,13 @@ class StockForm extends React.Component {
             [field]: e.currentTarget.value
         });
     }
-    fetchStockInfo(ticker) {
+
+    async createAPIObject(ticker) {
         const API_KEY = '1TC1G7P4CUSZNSL2'
         let TIMESERIES = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&apikey=${API_KEY}`;
         let STOCKNAME = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${ticker}&apikey=${API_KEY}`;
-        const that = this;
-        let fetchTicker = ticker.toUpperCase();
+        let createdObject = {}
+        let fetchTicker = ticker;
         let fetchName = ''
         let fetchXValues = [];
         let fetchYValues = [];
@@ -40,11 +38,6 @@ class StockForm extends React.Component {
                         fetchXValues.push(key);
                         fetchYValues.push(data['Time Series (Daily)'][key]['1. open']);
                     }
-                    that.setState({
-                        ticker: fetchTicker,
-                        xValues: fetchXValues,
-                        yValues: fetchYValues,
-                    });
                 }
             )
         fetch(STOCKNAME)
@@ -55,37 +48,48 @@ class StockForm extends React.Component {
             .then(
                 function(data) {
                     fetchName = data['bestMatches'][0]['2. name']
-                    fetchTicker = data['bestMatches'][0]['1. symbol']
-                    that.setState({
-                        stockName: fetchName,
-                        ticker: fetchTicker
-                    })
+                    fetchTicker = data['bestMatches'][0]['1. symbol'].toUpperCase();
                 }
             )
+            .then(
+                function() {
+                    createdObject.ticker = fetchTicker;
+                    createdObject.stockName = fetchName;
+                    createdObject.fetchXValues = fetchXValues;
+                    createdObject.fetchYValues = fetchYValues;
+                    })
+            // .then(
+            //     function() {
+            //         console.log('created object', createdObject)
+            //     }
+            // )
+        return createdObject;
     }
 
     // handleSubmit(e){
     //     e.preventDefault()
     //     e.stopPropagation();
-    //     this.fetchStockInfo(this.state.ticker)
-    //     this.props.action({...this.state}) 
+        // this.fetchStockInfo(this.state.ticker)
+        // this.props.action({...this.state}) 
     //     this.props.history.push(`/api/stocks/${this.state.id}`)
     // }
+    
 
-    handleSubmit(e){
+    async handleSubmit(e){
         e.preventDefault()
-        e.stopPropagation();
-        console.log('IN HANDLESUBMIT', this.state);
-        this.fetchStockInfo(this.state.ticker)
-        this.props.history.push(`/api/stocks/${this.state.id}`)
+        // e.stopPropagation();
+        // console.log('THIS IS THE REF123',ref)
+        let ref = await this.createAPIObject(this.state.ticker)
+        // let ref = JSON.stringify({stock: this.createAPIObject(this.state.ticker)})
+        console.log(ref)
+        debugger
+        this.props.action(ref)
     }
 
-    componentDidUpdate(prevProps, prevState){
-        console.log('IN COMPONENTDIDUPDATE',this.state)
-        if(prevState !== this.state){
-            this.props.action({...this.state})
-        }
-    }
+    // componentWillUnmount(){
+    //     console.log('IN COMPONENTWILLUNMOUNT',this.state)
+    //     this.props.history.push(`/stocks/${this.state.id}`)
+    // }
 
     render() {
         return (
