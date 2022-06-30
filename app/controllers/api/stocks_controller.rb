@@ -6,6 +6,9 @@ class Api::StocksController < ApplicationController
         V1::StockSerializer.new(@stock)
     end
 
+    def index
+        @stocks = Stock.all
+    end
 
     def show
         @stock = Stock.find(params[:id])

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from "react-router-dom";
+import { withRouter } from 'react-router-dom';
 
 class StockForm extends React.Component {
     constructor(props) {
@@ -7,7 +7,6 @@ class StockForm extends React.Component {
         this.state = {
             ticker: ''
           }
-        // const history = useHistory();
         this.handleSubmit = this.handleSubmit.bind(this);
         this.createAPIObject = this.createAPIObject.bind(this);
     }
@@ -66,42 +65,29 @@ class StockForm extends React.Component {
         return createdObject;
     }
 
-    // handleSubmit(e){
-    //     e.preventDefault()
-    //     e.stopPropagation();
-        // this.fetchStockInfo(this.state.ticker)
-        // this.props.action({...this.state}) 
-    //     this.props.history.push(`/api/stocks/${this.state.id}`)
-    // }
-    
-
     async handleSubmit(e){
         e.preventDefault()
-        // e.stopPropagation();
-        // console.log('THIS IS THE REF123',ref)
         let ref = await this.createAPIObject(this.state.ticker)
-        // let ref = JSON.stringify({stock: this.createAPIObject(this.state.ticker)})
         setTimeout(()=>{
-            console.log('X VALUES',ref.x_values, ref.y_values)
-            // if (
-            //     typeof ref === 'object' && typeof ref.then === 'function'
-            // ){
-            //     console.log('THIS IS A PROMISE!!!')
-            // } else {
-            //     console.log('this is not a promise')
-            // }
-            // console.log(ref)
-            // console.log('PROPS',this.props)
-            // console.log('PROPS.DISPATCH',this.props.dispatch)
             this.props.action(ref, ref.x_values, ref.y_values)
         },1000)
-        // debugger
+        let that = this
+        setTimeout(()=>{
+            let lastObject;
+            jQuery.ajax({
+                url: '/api/stocks',
+                type: 'GET',
+                success: function(data){
+                    lastObject = data[Object.keys(data).length]
+                    that.props.history.push({
+                        pathname: `/stocks/${lastObject.id}`,
+                        props: that.props,
+                        state: that.state
+                    })
+                }
+            })
+        },2000)
     }
-
-    // componentWillUnmount(){
-    //     console.log('IN COMPONENTWILLUNMOUNT',this.state)
-    //     this.props.history.push(`/stocks/${this.state.id}`)
-    // }
 
     render() {
         return (
@@ -113,4 +99,4 @@ class StockForm extends React.Component {
     }
 }
  
-export default StockForm;
+export default withRouter(StockForm);
