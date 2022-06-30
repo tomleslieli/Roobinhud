@@ -7,11 +7,13 @@ export const receiveStock = stock => ({
     stock
 });
 
-export const fetchStock = stockId => dispatch => (
-  StockUtil.fetchStock(stockId).then(stock => 
-    dispatch(receiveStock(ticker))
-    )
-)
+export const fetchStock = stockId => dispatch => {
+  let aye = StockUtil.fetchStock(stockId);
+  console.log(`THIS IS THE STOCK ${stockId}`, aye)
+  // .then(stock => 
+  //   dispatch(receiveStock(stock))
+}
+
 
 // export const createStock = stock => dispatch => (
 //   // console.log('CREATESTOCK ACTION REACHED')

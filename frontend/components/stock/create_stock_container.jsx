@@ -9,7 +9,10 @@ const mSTP = state => ({
     stockName: '',
     x_values: [],
     y_values: []
-  }
+  },
+  currentValue: 0.0,
+  dollarsToday: 0.0,
+  percentToday: 0.0,
 });
 
 const mDTP = dispatch => ({

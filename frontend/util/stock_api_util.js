@@ -1,9 +1,9 @@
-export const fetchStock = stockId => (
+export const fetchStock = stockId => {
     $.ajax({
         url: `/api/stocks/${stockId}`,
         method: 'GET',
     })
-);
+};
 
 export const createStock = (stock, xValues, yValues) => (
     // console.log('IN STOCK API UTIL', stock)
