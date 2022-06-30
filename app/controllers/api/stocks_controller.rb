@@ -15,7 +15,7 @@ class Api::StocksController < ApplicationController
         puts 'WE ARE IN THE CREATE FUNCTION'
         # debugger
         @stock = Stock.new(stock_params)
-        debugger
+        # debugger
         puts 'THESE ARE THE PARAMS'
         puts stock_params
         if @stock.save
