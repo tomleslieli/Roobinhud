@@ -1,4 +1,5 @@
 export const fetchStock = stockId => {
+    console.log('WE ARE IN FETCHSTOCK', stockId)
     $.ajax({
         url: `/api/stocks/${stockId}`,
         method: 'GET',

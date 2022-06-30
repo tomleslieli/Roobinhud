@@ -7,15 +7,15 @@ ChartJS.register(...registerables);
 class ShowStock extends React.Component {
     constructor(props){
         super(props);
-        this.state = this.props.state
+        this.state  = this.props.state
     }
     componentDidMount() {
         this.props.fetchStock(this.props.match.params.stockId);
     }
     render() {
         const { stock } = this.props
-        // console.log('THIS IS THE STATE', this.state);
-        // console.log('THIS IS THE PROPS',this.props)
+        console.log('THIS IS THE STATE', this.state);
+        console.log('THIS IS THE PROPS',this.props)
         // console.log('THIS IS THE STOCK',stock)
         // const { stock, user } = this.props
         // let combined = [];

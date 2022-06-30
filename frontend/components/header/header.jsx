@@ -33,13 +33,15 @@ const Header = ({ currentUser, logout }) => {
   );
   const personalHeader = () => (
     <div className='header-signed-in'>
-      <div className='header-logo-signed-in'>
-        <Link to="/">
-          <img src='https://robinhood-clone-assets.s3.amazonaws.com/logo_icon_black.png' alt='logo-icon-black' width='32px'/>
-        </Link>
-      </div>
-      <div className='search-bar-container'>
-        <CreateStockContainer store={store}/>
+      <div className='header-signed-in-left'>
+        <div className='header-logo-signed-in'>
+          <Link to="/">
+            <img id='header-logo-signed-in' src='https://robinhood-clone-assets.s3.amazonaws.com/logo_icon_black.png' alt='logo-icon-black' width='32px'/>
+          </Link>
+        </div>
+        <div className='search-bar-container'>
+          <CreateStockContainer store={store}/>
+        </div>
       </div>
       <div className='header-user'>
         <span className='header-user-links'>

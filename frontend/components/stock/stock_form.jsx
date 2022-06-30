@@ -70,7 +70,7 @@ class StockForm extends React.Component {
         let ref = await this.createAPIObject(this.state.ticker)
         setTimeout(()=>{
             this.props.action(ref, ref.x_values, ref.y_values)
-        },1000)
+        },500)
         let that = this
         setTimeout(()=>{
             let lastObject;
@@ -86,7 +86,7 @@ class StockForm extends React.Component {
                     })
                 }
             })
-        },2000)
+        },1000)
     }
 
     render() {

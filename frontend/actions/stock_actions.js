@@ -8,10 +8,10 @@ export const receiveStock = stock => ({
 });
 
 export const fetchStock = stockId => dispatch => {
-  let aye = StockUtil.fetchStock(stockId);
-  console.log(`THIS IS THE STOCK ${stockId}`, aye)
+  StockUtil.fetchStock(stockId)
+  // console.log(`THIS IS THE STOCK ${stockId}`, aye)
   // .then(stock => 
-  //   dispatch(receiveStock(stock))
+  //   dispatch(receiveStock(stock)))
 }
 
 
@@ -25,7 +25,6 @@ export const fetchStock = stockId => dispatch => {
 // )
 
 export const createStock = (stock, x_values, y_values) => {
-  // debugger
   return (dispatch) => {
     return StockUtil.createStock(stock, x_values, y_values)
     .then(stock => dispatch(receiveStock(stock)))
@@ -33,7 +32,7 @@ export const createStock = (stock, x_values, y_values) => {
 }
 
 export const updateStock = stock => dispatch => (
-  StockUtil.updateStock(stock).then(stock => 
+  StockUtil.updateStock(stock, x_values, y_values).then(stock => 
     dispatch(receiveStock(stock))
   )
 )

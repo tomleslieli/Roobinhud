@@ -56,6 +56,11 @@ header {
     margin-left: 30px;
 }
 
+.header-logo-signed-in {
+    position: relative;
+    top: 20px;
+}
+
 .header-info{
     display: inline-block;
 }
@@ -86,6 +91,17 @@ header {
     .signup-button {
         display: none;
     }
+    .header-user {
+        display: none;
+    }
+}
+
+.header-signed-in-left {
+    width: 70%;
+    height: 100%;
+    white-space: none;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
 .account {
@@ -214,11 +230,11 @@ header {
 
 .search-bar-container {
     position: relative;
-    left: -8%;
-    min-width: 80%;
     display: flex;
-    justify-content: center;
-    margin-left: 7px;
+    justify-content: flex-start;
+    align-items: center;
+    left: 105px;
+    top: -26px;
 }
 
 .search-bar {
@@ -226,7 +242,7 @@ header {
     border: 1px solid rgb(223, 223, 223);
     color: black;
     min-height: 30px;
-    min-width: 400px;
+    min-width: 500px;
     font-size: 10px;
 }
 
