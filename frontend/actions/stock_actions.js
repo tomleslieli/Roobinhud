@@ -8,21 +8,16 @@ export const receiveStock = stock => ({
 });
 
 export const fetchStock = stockId => dispatch => {
-  StockUtil.fetchStock(stockId)
-  // console.log(`THIS IS THE STOCK ${stockId}`, aye)
-  // .then(stock => 
-  //   dispatch(receiveStock(stock)))
+  let aye = StockUtil.fetchStock(stockId)
+  console.log(`THIS IS THE STOCK ${stockId}`, aye)
+  jQuery.ajax({
+    url: `/api/stocks/${stockId}`,
+    type: 'GET',
+    success: function(stock){
+        dispatch(receiveStock(stock))
+    }
+  })
 }
-
-
-// export const createStock = stock => dispatch => (
-//   // console.log('CREATESTOCK ACTION REACHED')
-//   // console.log(stock)
-//   // console.log('END CREATESTOCK')
-//   StockUtil.createStock(stock).then(
-//     stock => dispatch(receiveStock(stock))
-//   )
-// )
 
 export const createStock = (stock, x_values, y_values) => {
   return (dispatch) => {
@@ -31,7 +26,7 @@ export const createStock = (stock, x_values, y_values) => {
   }
 }
 
-export const updateStock = stock => dispatch => (
+export const updateStock = (stock, x_values, y_values) => dispatch => (
   StockUtil.updateStock(stock, x_values, y_values).then(stock => 
     dispatch(receiveStock(stock))
   )

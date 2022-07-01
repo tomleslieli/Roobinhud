@@ -78,6 +78,7 @@ class StockForm extends React.Component {
                 url: '/api/stocks',
                 type: 'GET',
                 success: function(data){
+                    console.log('WOOOOHOOOOOO',this.props)
                     lastObject = data[Object.keys(data).length]
                     that.props.history.push({
                         pathname: `/stocks/${lastObject.id}`,
@@ -87,6 +88,10 @@ class StockForm extends React.Component {
                 }
             })
         },1000)
+    }
+
+    componentWillUnmount(){
+        this.props = null;
     }
 
     render() {

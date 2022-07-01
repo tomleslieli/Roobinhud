@@ -37,6 +37,10 @@ html {
    height: 100%;
  }
 
+ footer {
+   z-index: 1000;
+}
+
 #root {
    width: 100%;
 }
@@ -51,14 +55,8 @@ html {
    padding: none;
 }
 
-footer {
-   display: inline-block;
-   height: 100%;
-}
-
 .footer {
-   display: inline-block;
-   height: 800px;
+   height: 600px;
    background-color: white;
    margin: none;
    padding: none;

@@ -14,6 +14,7 @@ import BodyContainer from './body/body_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import ShowStockContainer from './stock/show_stock_container';
+import Invest from './invest/invest'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
@@ -21,21 +22,17 @@ const App = () => (
   <div className='app'>
     <header>
       <div className='header-container'>
-        <HeaderContainer />
+        <HeaderContainer store = {store}/>
       </div>
     </header>
 
     <Switch>
       <AuthRoute exact path='/login' component={LogInFormContainer} />
       <AuthRoute exact path='/signup' component={SignUpFormContainer} />
+      <AuthRoute exact path='/invest' component={Invest} />
       <ProtectedRoute exact path='/stocks/:stockId' component={ShowStockContainer} />
-      <AuthRoute exact path='/' component={BodyContainer} />
+      <BodyContainer store={store}/>
     </Switch>
-
-    <footer>
-      <div className='footer'>
-      </div>
-    </footer>
   </div>
 );
 
