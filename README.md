@@ -10,7 +10,7 @@
 
 #### Buy / Sell a Stock
 
-![Buy / Sell Stock](https://robinhood-clone-assets.s3.amazonaws.com/buy-stock.gif)
+![Buy / Sell Stock](https://robinhood-clone-assets.s3.amazonaws.com/buy-stock-compressed.gif)
 
 ## Background and Technologies
 
@@ -32,7 +32,7 @@ Roobinhüd, a Robinhood clone, is a commission-free investing brokerage & platfo
 ## Functionality and MVPs
 
 - Ability to search for stocks, which returns updated charts / market data.
-- Accounts are limited by their buying power, which they can add to by depositing.
+- Accounts are limited by their buying power, which can be increased by depositing.
 - Users can buy and sell stocks if they have sufficient buying power / equity. These are displayed on their dashboard.
 - Users can add / remove items to their watchlist. These are displayed on their dashboard.
 - When users search for a stock, key statistics such as market capitalization, volume, etc. will be displayed.
