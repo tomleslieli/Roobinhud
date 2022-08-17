@@ -10,7 +10,7 @@
 
 #### Buy / Sell a Stock
 
-![Buy / Sell Stock](https://robinhood-clone-assets.s3.amazonaws.com/phone-animation.gif)
+![Search for Stock Ticker](https://robinhood-clone-assets.s3.amazonaws.com/search-stock.gif)
 
 ## Background and Technologies
 
