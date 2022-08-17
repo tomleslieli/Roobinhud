@@ -1,84 +1,48 @@
-<h1>Roobinhüd</h1>
-
-
-
-
 # Roobinhüd
 
 ### [Roobinhüd](https://aa-linealert.herokuapp.com/)
 
-<h4>Roobinhüd, a Robinhood clone, is a commission-free investing brokerage & platform for stocks & exchanged-traded funds.</h4>
-
 ## Demo
 
-#### Search for Directions
+#### Buy / Sell a Stock
 
-![Search Directions](https://github.com/leochung97/LineAlert/blob/main/frontend/src/assets/img/search_directions.gif)
+![Buy / Sell Stock](https://github.com/leochung97/LineAlert/blob/main/frontend/src/assets/img/search_directions.gif)
 
-#### Create an Alert
+#### Add / Remove from Watchlist
 
-![Create Alert](https://github.com/leochung97/LineAlert/blob/main/frontend/src/assets/img/create_alert.gif)
+![Add / Remove from Watchlist](https://github.com/leochung97/LineAlert/blob/main/frontend/src/assets/img/create_alert.gif)
 
-## Background and Overview
+## Background and Technologies
 
-LineAlert was inspired by real-world events that occurred during our time at App Academy, a full stack software engineering bootcamp. On our first in-person day, a subway shooting shocked and delayed transit systems in NYC. Our application was designed to possibly prevent users from entering hazardous stations and to avoid delays that frequently occur on NYC subways.
+Roobinhüd, a Robinhood clone, is a commission-free investing brokerage & platform for stocks & exchanged-traded funds.
 
-There is currently no such alert system for subway riders in NYC. We wanted to create an application where users can notify others of events that may delay a commute or cause harm.
+Frontend:
+- React-Redux
+- HTML5 / SCSS
 
-The team's goals were to:
+Backend:
+- Ruby on Rails
+- PostgreSQL
 
-- Build a database to store NYC subway stations with names, latitude and longitude coordinates, and intersecting lines
-- Allow all users to view alerts but only authenticated users to have full CRUD (Create, Read, Update, Destroy) functionality on alerts
-- Utilize Google Maps API to design a seamless map with dynamic markers of all stations
-- Incorporate Google Directions API as a search feature where users can search their route and view all alerts on a polyline on the map
-- Notify users of new alerts through email notifications via NodeMailer, a module used to send alerts
-
-LineAlert is built with the MERN stack, a combination of following four technologies: MongoDB, Express, React, and Node.
+Misc:
+- Amazon AWS S3
+- Babel
+- Heroku
 
 ## Functionality and MVPs
 
-- Customized map using Google Maps API to only display the subway transit layer; can be toggled on or off by users
-- Users can create, read, update, and delete alerts which will be dynamically updated on the map
-- Option to view all alerts or click on any markers on the map
-- Search feature for directions from an origin to a destination will display a polyline on the map, highlighting any alerts on the route
+- Ability to search for stocks, which returns updated charts / market data.
+- Accounts are limited by their buying power, which they can add to by depositing.
+- Users can buy and sell stocks if they have sufficient buying power / equity. These are displayed on their dashboard.
+- Users can add / remove items to their watchlist. These are displayed on their dashboard.
+- When users search for a stock, key statistics such as market capitalization, volume, etc. will be displayed.
 
 ## Bonus Features
 
-- Option to display another route upon user request
-- Increase application functionality to all 5 boroughs of NYC
-- Instant message system for users to receive alerts based on their time preference
-- Create user preferences menu that can change user's desired alerts / notifications
+- Stock-specific news articles will be displayed for individual stocks, and general news articles will be displayed on the user dashboard.
 
-## Technologies
+### Alpha Vantage API
 
-LineAlert is built on the MERN stack (MongoDB, Express, React, and NodeJS).
-LineAlert uses Google Maps and Google Directions API to render a dynamic map of NYC subway stations and their alerts.
-The application makes use of the [Downshift](https://github.com/downshift-js/downshift) library for our search routes and station names.
+All market data within this application is drawn directly from Alpha Vantage API.
 
-### MERN Stack
-
-Utilizing the MERN stack allowed us to use JavaScript on both the frontend and backend. The user's information and preferences are stored as NoSQL objects in MongoDB.
-We used Express for backend routing by connecting routes to display our React frontend components through Axios requests.
-
-### Google Maps API
-
-A customized dynamic map is used to display the visual layer of available transit lines, with the ability to toggle on or off as a preference. Unique color coded markers (depending on hazard level) for alerts are rendered for every station pinpointed to their exact location using lattitude and longitude coordinates.
-
-### Google Directions API
-
-Users are able to search a route based on their input origin and destination. Results will allow users to know the duration of travel, distance, and expected arrival time. Users can also request for the next best route if the current route has alerts on its path. While the JSON object received for this request was useful, it was difficult to parse, as many layers were nested into each other.
-
-### Downshift
-
-Utilized for autocompleting search inputs when users were required to input station names (for creating alerts or searching available routes). There was difficulty implementing a flexible search query for users due to the fact that certain stations have the same names but use different train lines and also the fact that stations can have integer or string names. To simplify this and ensure the least error-prone method, we introduced autocomplete for all forms needing a station name.
-
-### NodeMailer
-
-A module used to send and notify users of new alerts. The initial setup of NodeMailer required strict authorization guidelines to be followed when utilizing Gmail accounts; specifically, O Auth 2. After authorization, the LineAlert team was able to utilize NodeMailer to send out new alert notifications to all users.
-
-## Group Members and Work Breakdown
-
-- Project Lead: [Leo Chung](https://github.com/leochung97)
-- Frontend Lead: [Tom Leslie Li](https://github.com/tomleslieli)
-- Backend Lead: [Nikhil Kumar](https://github.com/nikumar1206)
-- Flex Lead: [Vivian Chen](https://github.com/vnchen92)
+Alpha Vantage provides enterprise-grade financial market data through a set of powerful and developer-friendly APIs. From traditional asset classes (e.g., stocks and ETFs) to economic metrics, from foreign exchange rates to cryptocurrencies, from fundamental data to technical indicators, Alpha Vantage is your one-stop-shop for real-time and historical global market data delivered through RESTful stock APIs, Excel, and Google Sheets.
