@@ -6,11 +6,11 @@
 
 #### Search for Stock Ticker
 
-<!-- ![Search for Stock Ticker](https://robinhood-clone-assets.s3.amazonaws.com/search-stock.gif) -->
+![Search for Stock Ticker](https://robinhood-clone-assets.s3.amazonaws.com/search-stock.gif)
 
 #### Buy / Sell a Stock
 
-![Buy / Sell Stock](https://robinhood-clone-assets.s3.amazonaws.com/buy-stock.gif)
+![Buy / Sell Stock](https://robinhood-clone-assets.s3.amazonaws.com/phone-animation.gif)
 
 ## Background and Technologies
 
