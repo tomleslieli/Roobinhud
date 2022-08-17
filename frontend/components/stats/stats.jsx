@@ -577,7 +577,12 @@ const Stats = ({
                   const shortMonth = monthNames[date.getMonth()];
                   const postDate = shortMonth + " " + shortDate;
                   return (
-                    <a className="news-item" href={el.url} key={el.url}>
+                    <a
+                      className="news-item"
+                      href={el.url}
+                      target="_blank"
+                      key={el.url}
+                    >
                       <div className="news-left">
                         <div className="title-date">
                           <h5>{el.source}</h5>

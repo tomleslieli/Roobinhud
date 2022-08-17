@@ -208,7 +208,9 @@ const ShowStock = ({
         setCurrentInfo({
           symbol: currentObject.symbol,
           info: currentObject.info,
-          currentPrice: `${parseFloat(stocks[ticker]['info']['price']).toFixed(2)}`,
+          currentPrice: `${parseFloat(stocks[ticker]["info"]["price"]).toFixed(
+            2
+          )}`,
           dailyChange: `${dailyChange}`,
           dailyPercent: `${dailyPercent}`,
           color: dailyChange >= 0 ? "#5AC53B" : "rgb(244, 104, 39)",
@@ -557,9 +559,7 @@ const ShowStock = ({
                     <h5>Open</h5>
                     <h6>{currentInfo.info.open}</h6>
                   </div>
-                  <div className="stats-info-item">
-
-                  </div>
+                  <div className="stats-info-item"></div>
                 </div>
               </div>
             )}
@@ -593,7 +593,12 @@ const ShowStock = ({
                   const shortMonth = monthNames[date.getMonth()];
                   const postDate = shortMonth + " " + shortDate;
                   return (
-                    <a className="news-item" href={el.url} key={el.url}>
+                    <a
+                      className="news-item"
+                      href={el.url}
+                      target="_blank"
+                      key={el.url}
+                    >
                       <div className="news-left">
                         <div className="title-date">
                           <h5>{el.source}</h5>
@@ -603,25 +608,25 @@ const ShowStock = ({
                         <h6>{el.summary.substring(0, 100)}...</h6>
                       </div>
                       <div className="news-right">
-                        {
-                          el.banner_image ? 
+                        {el.banner_image ? (
                           <img
-                          className="news-right-img"
-                          src={el.banner_image}
-                          alt="stock-news-image"
-                        />
-                          :
-                          <img className='news-right-img'
-                          src='https://robinhood-clone-assets.s3.amazonaws.com/blank-image.png'
-                          alt='blank-news-image'/>
-                        }
-
+                            className="news-right-img"
+                            src={el.banner_image}
+                            alt="stock-news-image"
+                          />
+                        ) : (
+                          <img
+                            className="news-right-img"
+                            src="https://robinhood-clone-assets.s3.amazonaws.com/blank-image.png"
+                            alt="blank-news-image"
+                          />
+                        )}
                       </div>
                     </a>
                   );
                 })
               ) : (
-                  <></>
+                <></>
               )}
             </div>
           </div>
@@ -668,7 +673,7 @@ const ShowStock = ({
               <div className="buy-sell-component-container">
                 {toggleBuySell === "Buy" ? (
                   <BuyStockForm
-                    ticker = {ticker}
+                    ticker={ticker}
                     stocks={stocks}
                     user={user}
                     portfolios={portfolios}
@@ -676,7 +681,7 @@ const ShowStock = ({
                   />
                 ) : (
                   <SellStockForm
-                  ticker = {ticker}
+                    ticker={ticker}
                     stocks={stocks}
                     user={user}
                     portfolios={portfolios}

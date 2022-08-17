@@ -6,25 +6,25 @@
 
 #### Buy / Sell a Stock
 
-![Buy / Sell Stock](https://github.com/leochung97/LineAlert/blob/main/frontend/src/assets/img/search_directions.gif)
+![Buy / Sell Stock](https://robinhood-clone-assets.s3.amazonaws.com/buy-stock.gif)
 
-#### Add / Remove from Watchlist
+#### Search for Stock Ticker
 
-![Add / Remove from Watchlist](https://github.com/leochung97/LineAlert/blob/main/frontend/src/assets/img/create_alert.gif)
+![Search for Stock Ticker](https://robinhood-clone-assets.s3.amazonaws.com/search-stock.gif)
 
 ## Background and Technologies
 
 Roobinhüd, a Robinhood clone, is a commission-free investing brokerage & platform for stocks & exchanged-traded funds.
 
-Frontend:
+## Frontend:
 - React-Redux
 - HTML5 / SCSS
 
-Backend:
+## Backend:
 - Ruby on Rails
 - PostgreSQL
 
-Misc:
+## Misc:
 - Amazon AWS S3
 - Babel
 - Heroku
@@ -41,7 +41,7 @@ Misc:
 
 - Stock-specific news articles will be displayed for individual stocks, and general news articles will be displayed on the user dashboard.
 
-### Alpha Vantage API
+## Alpha Vantage API
 
 All market data within this application is drawn directly from Alpha Vantage API.
 
