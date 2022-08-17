@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Robinhood</title>
+    <link rel="icon" type="image/x-icon" href='https://robinhood-clone-assets.s3.amazonaws.com/logo_icon_green.png'>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

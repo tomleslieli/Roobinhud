@@ -1,0 +1,443 @@
+.stock-show {
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: "Capsule Sans Text", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+}
+.stock-dashboard {
+  margin-top: 55px;
+  min-width: 60%;
+  max-width: 60%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.stock-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  // justify-content: flex-start;
+  min-width: 650px;
+  max-width: 60%;
+  min-height: 100%;
+  // background-color: black;
+  margin-right: 35px;
+  margin-bottom: 50px;
+}
+
+.buy-sell-stock-container {
+  min-width: 280px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin-left: 35px;
+  position: relative;
+  z-index: 10;
+}
+
+.buy-sell-stock {
+  z-index: 50;
+  position: fixed;
+  min-width: 275px;
+  min-height: 395px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  border-radius: 5px;
+  box-shadow: 0px 7px 25px 5px rgba(0, 0, 0, 0.05);
+}
+
+.buy-sell-component-container {
+  position: relative;
+  min-width: 100%;
+  min-height: 295px;
+  max-height: 295px;
+}
+
+.buying-power-container {
+  position: relative;
+  min-width: 100%;
+  min-height: 50px;
+  max-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1.5px solid rgba(177, 181, 184, 0.2);
+}
+
+.buying-power-container > h6 {
+  font-size: 11px;
+}
+
+.buy-specific-stock {
+  position: relative;
+  min-width: 100%;
+  min-height: 50px;
+  max-height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1.5px solid rgba(177, 181, 184, 0.2);
+}
+
+.buy-specific-text {
+  margin-left: 30px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.stock-line-chart {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-bottom: 1.5px solid rgba(177, 181, 184, 0.2);
+}
+
+.stock-info {
+  display: inline-block;
+  margin-bottom: 10px;
+  cursor: default;
+}
+
+.stock-info > h1 {
+  font-size: 33px;
+  font-weight: 400;
+  letter-spacing: -1px;
+}
+
+.stock-info > h3 {
+  font-size: 33px;
+  font-weight: 400;
+  letter-spacing: -1px;
+}
+
+.stock-chart {
+  display: inline-block;
+}
+
+.interval-buttons {
+  margin-bottom: -5px;
+  min-width: 30%;
+  max-width: 40px;
+  min-height: 40px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  top: -5px;
+}
+
+.interval-button-day,
+.interval-button-week,
+.interval-button-month,
+.interval-button-three-month {
+  border-radius: 0px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 12px;
+  margin-right: 5px;
+  min-height: 40px;
+  background-color: white;
+  transition: border-bottom 0.1s ease, color 0.1s ease;
+}
+
+.interval-button-day:hover,
+.interval-button-week:hover,
+.interval-button-month:hover,
+.interval-button-three-month:hover {
+  border-bottom: 2px solid black;
+  // transform: translate(0px,1px);
+}
+
+.stock-day-change {
+  margin-top: 7.5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.stock-percent {
+  margin-left: 5px;
+}
+
+.current-price {
+  margin-top: 7.5px;
+}
+
+.time-interval {
+  margin-left: 2.5px;
+  font-weight: 400;
+  color: rgb(91, 91, 91);
+}
+
+.current-position {
+  margin-top: 40px;
+  min-height: 170px;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.current-position-item {
+  border-radius: 2px;
+  min-width: 45%;
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1.5px solid rgba(177, 181, 184, 0.2);
+  margin-bottom: 40px;
+  cursor: default;
+}
+
+.current-position-top {
+  min-width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.current-position-top > h5 {
+  font-size: 25px;
+}
+
+.current-position-top > h6 {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.current-position-bottom {
+  min-height: 35px;
+  min-width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  border-bottom: 1.5px solid rgba(177, 181, 184, 0.2);
+}
+
+.current-position-bottom-bottom {
+  min-height: 35px;
+  min-width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.news {
+  min-width: 100%;
+  min-height: 750px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats-info {
+  margin-top: 20px;
+  min-width: 80%;
+  margin-left: 12.5%;
+  min-height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  cursor: default;
+}
+
+.stats-info-column {
+  min-width: 30%;
+  max-width: 30%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats-info-item {
+  min-height: 55px;
+  min-width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: start;
+}
+
+.stats-info-item > h5 {
+  font-weight: 600;
+}
+
+.stats-info-item > h6 {
+  margin-top: 5px;
+  font-weight: 400;
+}
+
+.news-item {
+  padding-left: 20px;
+  padding-right: 20px;
+  min-height: 150px;
+  min-width: 100%;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+.news-item:hover {
+  background-color: #f6f8fa;
+}
+
+.news-left {
+  max-width: 60%;
+  margin-right: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.title-date {
+  display: flex;
+  flex-direction: row;
+}
+
+.title-date > h5 {
+  color: black;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 12px;
+  margin-right: 5px;
+}
+.title-date > h6 {
+  margin-bottom: 10px;
+  font-weight: 300;
+  font-size: 12px;
+  color: rgb(91, 91, 91);
+}
+
+.news-left > h5 {
+  color: black;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.news-left > h6 {
+  margin-bottom: 5px;
+  color: rgb(91, 91, 91);
+}
+
+.news-right {
+  max-width: 30%;
+  min-width: 30%;
+  max-height: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.news-right-img {
+  max-width: 100%;
+  min-width: 100%;
+  max-height: 120px;
+}
+
+.news-label {
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 25px;
+  border-bottom: 1.5px solid rgba(177, 181, 184, 0.2);
+  min-height: 40px;
+}
+
+.stats-info-label {
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 25px;
+  border-bottom: 1.5px solid rgba(177, 181, 184, 0.2);
+  min-height: 40px;
+  min-width: 650px;
+}
+
+#sell-all {
+  margin-left: 3px;
+}
+
+.sell-error {
+  position: absolute;
+  color: rgb(234, 97, 75);
+  top: 360px;
+  animation: errorSlideIn .5s ease, errorFadeIn .5s ease;
+  z-index: 5;
+}
+
+#sell-error-text {
+  font-size: 11px;
+}
+
+@keyframes errorSlideIn {
+  0%{transform: translate(0px, -5px)}
+  80%{transform: translate(0px, 1px)}
+  100%{transform: translate(0px, 0px)}
+}
+
+@keyframes errorFadeIn {
+  0%{opacity: 0%}
+  100%{opacity: 100%}
+}
+
+.add-to-watchlist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #08c40c;
+  color: #08c40c;
+  border-radius: 150px;
+  min-width: 225px;
+  min-height: 42px;
+  font-family: "Capsule Sans Text", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  position: fixed;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 440px;
+  margin-right: 25px;
+}
+
+.add-to-watchlist:hover {
+  background-color: #ebfaea;
+}
+
+.add-to-watchlist.sell:hover {
+  background-color: #faeaea;
+}

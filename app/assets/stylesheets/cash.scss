@@ -1,0 +1,758 @@
+.cash-page {
+  min-width: 100%;
+  min-height: 95vh;
+  max-height: 95vh;
+  overflow-y: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: "Capsule Sans Text", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.cash-dashboard {
+  margin-top: 85px;
+  min-width: 60%;
+  max-width: 60%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.cash-page-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  // justify-content: flex-start;
+  min-width: 650px;
+  max-width: 60%;
+  min-height: 100vh;
+  margin-right: 35px;
+  margin-bottom: 50px;
+}
+
+.cash-page-right {
+  min-width: 280px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin-left: 35px;
+  position: relative;
+  z-index: 10;
+}
+
+.current-cash-amount {
+  margin-top: -10px;
+  font-size: 31px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.cash-amount-title {
+  margin-top: -30px;
+  font-size: 31px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.cash-page-item {
+  min-width: 100%;
+  cursor: default;
+}
+
+.cash-page-item > h5 {
+  font-size: 12px;
+}
+
+.cash-amount {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.ach {
+  margin-bottom: 10px;
+}
+
+.ach-number {
+  font-weight: 700;
+}
+
+.account-details-toggle > h5 {
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  color: rgb(8, 196, 12);
+}
+
+.show-account-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.show-account-container > h5 {
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+#brokerage-cash {
+  margin-bottom: 10px;
+  min-height: 60px;
+  transform: translate(0px, -7.5px);
+}
+
+#withdrawable-cash {
+  margin-top: 5px;
+  transform: translate(0px, -7.5px);
+}
+
+.add-cash-container {
+  min-width: 280px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin-left: 35px;
+  position: relative;
+  z-index: 10;
+}
+
+.add-cash {
+  z-index: 50;
+  position: fixed;
+  min-width: 275px;
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 5px;
+  border: 1.5px solid rgba(177, 181, 184, 0.2);
+}
+
+.transfer-money {
+  position: relative;
+  min-width: 100%;
+  min-height: 50px;
+  max-height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid rgba(177, 181, 184, 0.2);
+}
+
+.transfer-text {
+  margin-left: 30px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.transfer-container {
+  margin-top: 20px;
+  position: relative;
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.transfer-item {
+  min-width: 77.5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 30px;
+  margin-bottom: 15px;
+}
+
+.transfer-item > h6 {
+  font-size: 13px;
+}
+
+.transfer-amount {
+  min-height: 30px;
+  max-height: 30px;
+  min-width: 124px;
+  max-width: 124px;
+  background-color: white;
+  color: black;
+  border: 1px solid #f6f8fa;
+  border-radius: 2px;
+  text-align: right;
+  transition: background-color 0.4s ease, border 0.4s ease;
+  transform: translate(-6px, 0px);
+}
+
+.transfer-item-right > input:focus {
+  border: 1px solid rgb(8, 196, 12);
+  outline: 1px solid rgb(8, 196, 12);
+}
+
+.transfer-item-right > select:focus {
+  border: 1px solid rgb(8, 196, 12);
+  outline: 1px solid rgb(8, 196, 12);
+}
+
+.transfer-amount:hover {
+  border: 1px solid #e6e9eb;
+}
+
+#transfer-to {
+  min-height: 35px;
+  max-height: 35px;
+  min-width: 131px;
+  max-width: 131px;
+  transform: translate(-6px, 0px);
+  background-color: #ffffff;
+  color: black;
+  border: 1px solid #f6f8fa;
+  border-radius: 2px;
+  text-align: left;
+  transition: border 0.3s ease;
+}
+
+#transfer-to:hover {
+  border: 1px solid #e6e9eb;
+}
+
+#transfer-from {
+  min-height: 35px;
+  max-height: 35px;
+  min-width: 131px;
+  max-width: 131px;
+  transform: translate(-6px, 0px);
+  background-color: #ffffff;
+  color: black;
+  border: 1px solid #f6f8fa;
+  border-radius: 2px;
+  text-align: left;
+  transition: border 0.3s ease;
+}
+
+#transfer-from:hover {
+  border: 1px solid #e6e9eb;
+}
+
+.transfer-item-left {
+  min-width: 50%;
+}
+.transfer-item-right {
+  min-width: 50%;
+}
+
+.transfer-button {
+  color: white;
+  border-radius: 150px;
+  background-color: #b4bdc2;
+  border: none;
+  min-width: 215px;
+  min-height: 42px;
+  font-family: "Capsule Sans Text", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  position: relative;
+  cursor: default;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.transfer-button.green {
+  background-color: #08c40c;
+  cursor: pointer;
+}
+
+.cash-position {
+  position: absolute;
+  transform: translate(300px, -86px);
+  margin-top: 40px;
+  min-height: 50px;
+  max-height: 50px;
+  min-width: 750px;
+  max-width: 750px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cash-position-item {
+  z-index: 500;
+  background-color: white;
+  border-radius: 2px;
+  min-width: 45%;
+  min-height: 145px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1.5px solid rgba(177, 181, 184, 0.2);
+  margin-bottom: 40px;
+  cursor: default;
+  animation: cashPosSlideIn 0.3s ease, cashPosFadeIn 0.2s ease;
+}
+
+@keyframes cashPosSlideIn {
+  0% {
+    transform: translate(0px, -7px);
+  }
+  98% {
+    transform: translate(0px, 2px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+@keyframes cashPosFadeIn {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.fa-circle-info {
+  margin-left: 2px;
+  color: black;
+  cursor: pointer;
+  transform: translate(10px, -7.7px);
+  transition: color 0.2s ease;
+}
+
+.fa-circle-info:hover {
+  color: rgb(70, 70, 70);
+}
+
+#debit-card {
+  margin-top: 50px;
+  font-size: 10px;
+  display: flex;
+  flex-direction: row;
+  min-width: 100%;
+  min-height: 450px;
+}
+
+.debit-card-left {
+  min-width: 35%;
+  min-height: 100%;
+}
+
+.debit-card-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  min-width: 65%;
+  margin-top: -150px;
+}
+
+.debit-card-right-item {
+  min-width: 90%;
+  max-width: 90%;
+  min-height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  border-bottom: 1.5px solid rgba(177, 181, 184, 0.2);
+  transition: background-color 0.2s ease;
+}
+
+.debit-card-right-item > h5 {
+  margin-left: 10px;
+}
+
+.debit-card-right-item:hover {
+  background-color: #f6f8fa;
+}
+
+.debit-card-title {
+  font-size: 25px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+#cash-page-footer {
+  margin-top: 20px;
+}
+
+.cash-page-footer-item {
+  font-size: 12px;
+  margin-bottom: 50px;
+  color: #82888c;
+}
+
+.debit-card-info {
+  position: absolute;
+  min-width: 90px;
+  max-width: 90px;
+  min-height: 345px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.debit-card-number {
+  margin-top: 50px;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-left: 80px;
+}
+
+.numbers-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: 400;
+  text-align: justify;
+}
+
+.numbers-row > h6 {
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+.numbers-row > h5 {
+  font-size: 28px;
+}
+
+.valid-thru {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: right;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.cvc {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  font-weight: 400;
+  text-align: right;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.bottom-info {
+  margin-bottom: 7.5px;
+}
+
+.debit-slider-number {
+  min-width: 75px;
+  min-height: 30px;
+  background-color: white;
+  border-radius: 50px;
+  border: 1.5px solid rgba(177, 181, 184, 0.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: background-color 0.5s ease;
+  margin-right: 10px;
+}
+
+.slider-circle.clicked {
+  transform: translate(15px, 0px);
+}
+
+.debit-slider-number.clicked {
+  background-color: rgb(8, 196, 12);
+}
+
+.slider-circle {
+  margin-left: 5px;
+  margin-right: 5px;
+  min-height: 23px;
+  max-height: 23px;
+  min-width: 23px;
+  max-width: 23px;
+  border-radius: 100px;
+  background-color: white;
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  border: 1.5px solid rgba(177, 181, 184, 0.2);
+  transition: transform 0.5s ease;
+}
+
+#report-problem {
+  border-bottom: none;
+}
+
+.slider-on {
+  margin-left: 10px;
+  font-weight: 500;
+  color: white;
+  animation: sliderTextFadeIn 0.3s ease;
+}
+
+.slider-off {
+  margin-left: 8px;
+  font-weight: 500;
+  animation: sliderTextFadeIn 0.3s ease;
+}
+
+@keyframes sliderTextFadeIn {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.fa-angle-right {
+  margin-right: 10px;
+  cursor: pointer;
+  color: black;
+}
+
+.change-pin {
+  z-index: 1200;
+  position: absolute;
+  min-height: 100vh;
+  min-width: 100%;
+  background-color: black;
+  opacity: 50%;
+  animation: changePinFade 1s ease;
+}
+
+@keyframes changePinFade {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 50%;
+  }
+}
+
+.change-pin-form-container {
+  position: absolute;
+  min-height: 100vh;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.change-pin-form {
+  font-family: "Capsule Sans Text", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+  z-index: 2000;
+  min-width: 475px;
+  max-width: 475px;
+  min-height: 500px;
+  max-height: 500px;
+  background-color: white;
+  opacity: 100%;
+  border-radius: 5px;
+  animation: pinFadeIn 0.3s ease, pinSlideIn 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: default;
+}
+
+.change-pin-form > h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.change-pin-form > h5 {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.set-pin-text {
+  margin-bottom: 50px;
+}
+
+@keyframes pinFadeIn {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes pinSlideIn {
+  0% {
+    transform: translate(0px, 100px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+.fa-credit-card {
+  margin-bottom: 30px;
+}
+
+.pin-form {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#enter-pin {
+  min-height: 30px;
+  max-height: 30px;
+  min-width: 60%;
+  max-width: 60%;
+  background-color: #f6f8fa;
+  color: black;
+  border: 1px solid #f6f8fa;
+  border-radius: 2px;
+  text-align: center;
+  transition: background-color 0.4s ease, border 0.4s ease;
+  margin-bottom: 50px;
+}
+
+#enter-pin:hover {
+  background-color: white;
+  border: 1px solid #dfe2e4;
+}
+
+#enter-pin:focus {
+  border: 1px solid rgb(8, 196, 12);
+  outline: 1px solid rgb(8, 196, 12);
+}
+
+.pin-button {
+  color: white;
+  border-radius: 150px;
+  background-color: #b4bdc2;
+  border: none;
+  min-width: 175px;
+  min-height: 42px;
+  font-family: "Capsule Sans Text", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  position: relative;
+  cursor: default;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.pin-button.green {
+  background-color: #08c40c;
+  cursor: pointer;
+}
+
+.pin-button.green:hover {
+  background-color: #00b405;
+}
+
+.pin-button-done:hover {
+  background-color: #00b405;
+}
+
+.change-pin-form-complete {
+  font-family: "Capsule Sans Text", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+  z-index: 2000;
+  min-width: 475px;
+  max-width: 475px;
+  min-height: 400px;
+  max-height: 400px;
+  background-color: white;
+  opacity: 100%;
+  border-radius: 5px;
+  animation: pinFadeIn 0.3s ease, pinSlideIn 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.pin-button-done {
+  color: white;
+  border-radius: 150px;
+  background-color: #08c40c;
+  border: none;
+  min-width: 130px;
+  min-height: 42px;
+  font-family: "Capsule Sans Text", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  position: relative;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.change-pin-form-complete > h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.change-pin-form-complete > h5 {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.close-modal-1 {
+  transform: translate(205px, -65px);
+  cursor: pointer;
+  min-width: 35px;
+  max-width: 35px;
+  min-height: 35px;
+  max-height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.close-modal-1:hover {
+  background-color: #f6f8fa;
+}
+
+.close-modal-2 {
+  transform: translate(205px, -75px);
+  cursor: pointer;
+  min-width: 35px;
+  max-width: 35px;
+  min-height: 35px;
+  max-height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.close-modal-2:hover {
+  background-color: #f6f8fa;
+}

@@ -1,0 +1,172 @@
+.transaction-form-container {
+  min-width: 275px;
+  min-height: 295px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Capsule Sans Text", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+  cursor: default;
+}
+
+.transaction-form {
+  min-width: 80%;
+}
+
+.transaction-form-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 30px;
+  margin-bottom: 15px;
+}
+
+.transaction-form-row > h6 {
+  font-size: 13px;
+}
+
+.transaction-form-row > h5 {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.transaction-form-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buy-button {
+  background-color: #08c40c;
+  color: white;
+  border-radius: 150px;
+  border: none;
+  min-width: 215px;
+  min-height: 42px;
+  font-family: "Capsule Sans Text", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  position: relative;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.sell-button {
+  background-color: rgba(255, 80, 1, 255);
+  color: white;
+  border-radius: 150px;
+  border: none;
+  min-width: 215px;
+  min-height: 42px;
+  font-family: "Capsule Sans Text", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  position: relative;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.buy-button:hover {
+  background-color: #00b405;
+}
+
+.sell-button:hover {
+  background-color: #e64701;
+}
+
+#dollars-shares {
+  min-height: 35px;
+  max-height: 35px;
+  min-width: 130px;
+  max-width: 100px;
+  border: 1px solid #f6f8fa;
+  border-radius: 2px;
+  transition: box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+#dollars-shares:hover {
+  box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.05);
+}
+
+#buy-sell-amount {
+  min-height: 30px;
+  max-height: 30px;
+  min-width: 124px;
+  max-width: 124px;
+  background-color: #f6f8fa;
+  color: black;
+  border: 1px solid #f6f8fa;
+  border-radius: 2px;
+  text-align: right;
+  transition: background-color 0.4s ease, border 0.4s ease;
+}
+
+#buy-sell-amount:hover {
+  background-color: white;
+  // border: 1px solid #08c40c;
+}
+
+.buy-sell-amount > h5 {
+  padding-right: 10px;
+}
+
+.market-price-buy {
+  color: #08c40c;
+  font-weight: 600;
+}
+
+.market-price-sell {
+  color: rgba(255, 80, 1, 255);
+  font-weight: 600;
+}
+
+.transaction-option {
+  min-width: 500px;
+  min-height: 200px;
+}
+
+#toggle-buy {
+  display: flex;
+  align-items: center;
+  min-height: 51.49px;
+  cursor: pointer;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+}
+
+#toggle-buy:hover {
+  border-bottom: 2px solid #08c40c;
+}
+
+#toggle-sell {
+  display: flex;
+  align-items: center;
+  min-height: 51.49px;
+  cursor: pointer;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+}
+
+#toggle-sell:hover {
+  border-bottom: 2px solid rgba(255, 80, 1, 255);
+}
+
+#sell-all {
+  cursor: pointer;
+  font-weight: 600;
+  color: rgba(255, 80, 1, 255);
+  transition: color 0.2s ease;
+}
+
+#sell-all:hover {
+  color: #e64701;
+}
+
+#available-stock {
+  cursor: default;
+}

@@ -1,0 +1,370 @@
+.get-started-container {
+  background-color: #004022;
+  height: 800px;
+  width: 100%;
+  white-space: none;
+  display: flex;
+  padding-right: none;
+  margin-right: none;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .get-started-container {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .get-started-text {
+    max-width: 500px;
+    margin-right: 0px;
+    margin-left: 0px;
+    font-size: 55px;
+    margin-left: 210px;
+  }
+  .get-started-right-container {
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    left: -20px;
+  }
+  .get-started-button {
+    display: none;
+  }
+  #join-a {
+    font-size: 65px;
+    top: -20px;
+  }
+  #generation-of {
+    font-size: 65px;
+    top: -20px;
+  }
+  #invest-wrap {
+    flex-wrap: wrap;
+  }
+  #investing-center {
+    margin: none;
+  }
+  #investing-image-left {
+    margin: none;
+  }
+  .investing-container {
+    min-height: 1000px;
+  }
+}
+@media (max-width: 750px) {
+  #join-a {
+    font-size: 55px;
+  }
+  #generation-of {
+    font-size: 55px;
+  }
+  #phone-animation {
+    max-width: 600px;
+  }
+}
+@media (max-width: 600px) {
+  #join-a {
+    font-size: 42px;
+  }
+  #generation-of {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .get-started-text p {
+    font-size: 63px;
+    margin-right: none;
+  }
+  .get-started-right-container {
+    margin-left: -80px;
+    position: relative;
+    left: -20px;
+  }
+  #phone-animation {
+    display: block;
+    position: relative;
+    max-width: 880px;
+    margin-left: 150px;
+  }
+}
+
+.phone-animation-container {
+  display: inline-block;
+  padding-bottom: -200px;
+  margin-left: none;
+  position: relative;
+  left: -200px;
+  margin: -100px;
+}
+
+.phone-animation-container img {
+  position: relative;
+  top: -250px;
+  margin-bottom: -400px;
+  margin-top: -5px;
+  max-width: 950px;
+  height: auto;
+  width: auto\9;
+}
+
+#investing-is {
+  position: relative;
+  left: -5px;
+}
+.investing-container {
+  display: inline-block;
+  z-index: 20;
+  background: linear-gradient(
+        162deg,
+        rgba(6, 64, 19, 0.7) 0%,
+        rgb(116, 254, 36) 79%,
+        rgb(126, 255, 42) 100%
+      )
+      100% center / cover,
+    url(https://robinhood-clone-assets.s3.amazonaws.com/noise__d63eaf58eecf93a9e61385dd154fba64.svg)
+      rgb(0, 200, 5);
+  height: 800px;
+  overflow: hidden;
+}
+
+.investing-contents {
+  min-height: 100%;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.free-stock-ribbon {
+  z-index: 50;
+  height: 62px;
+  background-image: linear-gradient(74.84deg, #00c805 18.12%, #c3f53c 81.46%);
+  font-family: "Capsule Sans Text", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  cursor: default;
+}
+
+.session-body {
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.sign-up-container {
+  display: inline-block;
+  max-height: 700px;
+}
+.sign-up {
+  flex-direction: column;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-height: 700px;
+  min-width: 100%;
+  position: relative;
+  overflow: hidden;
+  font-family: "Capsule Sans Text", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+  font-weight: 335;
+}
+
+.sign-up img {
+  size: cover;
+  min-width: 100%;
+  height: auto;
+}
+
+.join-generation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 25;
+  position: absolute;
+  top: 200px;
+  font-size: 75px;
+  // white-space:initial;
+}
+#join-a {
+  position: relative;
+  cursor: default;
+  // top: -20px;
+}
+#generation-of {
+  position: relative;
+  cursor: default;
+  // top: 20px;
+}
+
+.signup-button-bottom {
+  border-radius: 150px;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  min-width: 100px;
+  min-height: 42px;
+  font-family: "Capsule Sans Text", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  position: relative;
+  padding: 3px;
+  margin: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.signup-button-bottom:hover {
+  background-color: rgb(44, 44, 44);
+}
+
+.get-started-text {
+  z-index: 1;
+  display: inline-block;
+  min-width: 50%;
+  font-size: 65px;
+  color: #c3f53c;
+  font-family: "Capsule Sans Text", sans-serif;
+  font-weight: 340;
+  position: relative;
+  text-align: center;
+  top: -5px;
+  margin-top: 20px;
+  left: -40px;
+  cursor: default;
+}
+
+.get-started-button {
+  background-color: #c3f53c;
+  color: black;
+  border-radius: 150px;
+  border: 1px solid black;
+  min-width: 125px;
+  min-height: 47px;
+  font-family: "Capsule Sans Text", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  position: relative;
+  padding: 3px;
+  margin-top: 3px;
+  cursor: pointer;
+  position: relative;
+  left: -40px;
+  top: 10px;
+}
+
+.get-started-right-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logged-in-body {
+  background-color: white;
+  min-width: 100%;
+  min-height: 1000px;
+}
+
+.logged-in-body {
+  background-color: black;
+  min-height: 500px;
+}
+
+.logged-in-body h1 {
+  color: white;
+}
+
+#investing-image-left {
+  position: relative;
+  top: -40px;
+  max-width: 400px;
+  margin-bottom: -180px;
+  // margin-left: 50px;
+  // margin-right: 50px;
+}
+
+.investing-left {
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.investing-text {
+  max-width: 50%;
+  min-width: 500px;
+  min-height: 450px;
+  font-size: 60px;
+  width: 500px;
+  word-wrap: break-word;
+  // margin-left: 50px;
+  // margin-right: 50px;
+  // margin-left: 50px;
+  font-family: "Capsule Sans Text", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+  font-weight: 350;
+  position: relative;
+  left: 17px;
+  top: 55px;
+}
+
+.investing-box {
+  background-color: white;
+  max-width: 233px;
+  position: relative;
+  top: -20px;
+}
+#start-building {
+  position: relative;
+  top: -13px;
+}
+
+#invest-in-stocks {
+  font-size: 20px;
+  position: relative;
+  top: 10px;
+  font-weight: 300;
+  margin-bottom: 70px;
+}
+.investing-button {
+  border-radius: 150px;
+  border: 1px solid black;
+  background-color: transparent;
+  color: black;
+  min-width: 165px;
+  min-height: 42px;
+  font-family: "Capsule Sans Text", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px;
+  margin: 3px;
+  display: relative;
+  cursor: pointer;
+  transition: color 0.1s ease, border 0.15s ease;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+:hover.investing-button {
+  color: white;
+  border: 1px solid white;
+}
+
+.disclaimer {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 11px;
+  position: relative;
+  top: -40px;
+  cursor: default;
+}
