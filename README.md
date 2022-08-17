@@ -10,21 +10,22 @@
 
 #### Buy / Sell a Stock
 
+![Search for Stock Ticker](https://robinhood-clone-assets.s3.amazonaws.com/search-stock.gif)
 ![Buy Stock](https://robinhood-clone-assets.s3.amazonaws.com/buy-stock.gif)
 
 ## Background and Technologies
 
 Roobinhüd, a Robinhood clone, is a commission-free investing brokerage & platform for stocks & exchanged-traded funds.
 
-## Frontend:
+## Frontend
 - React-Redux
 - HTML5 / SCSS
 
-## Backend:
+## Backend
 - Ruby on Rails
 - PostgreSQL
 
-## Misc:
+## Misc
 - Amazon AWS S3
 - Babel
 - Heroku
