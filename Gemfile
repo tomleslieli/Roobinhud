@@ -22,10 +22,11 @@ gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
+gem "terser"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -52,7 +53,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'better_errors'
   gem 'annotate'
-  gem 'bcrypt'
+  # gem 'bcrypt'
 end
 
 group :test do
