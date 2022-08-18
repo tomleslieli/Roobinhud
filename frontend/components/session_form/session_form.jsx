@@ -1,4 +1,5 @@
 import React from "react";
+import { clearErrors } from "../../actions/session_actions";
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -56,6 +57,7 @@ class SessionForm extends React.Component {
   }
 
   componentDidMount() {
+    clearErrors();
     let signup = document.querySelector(".hidden-for-login");
     if (this.props.formType === "Sign up") {
       signup.classList.add("signup");
