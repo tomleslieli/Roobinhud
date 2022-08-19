@@ -74,13 +74,18 @@
 
 .portfolio-item-ticker {
   text-align: left;
-  margin-right: 20px;
   font-weight: 600;
+  display: flex;
+  justify-content: flex-start;
+  min-width: 17%;
 }
 
 .portfolio-item-change {
   text-align: right;
-  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-width: 17%;
 }
 
 .portfolio-chart {
@@ -205,4 +210,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  left: -12.5px;
 }

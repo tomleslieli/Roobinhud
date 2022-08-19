@@ -70,6 +70,13 @@ const Stats = ({
   }, []);
 
   useEffect(() => {
+    console.log(xValues)
+  }, [xValues])
+  useEffect(() => {
+    console.log(yValues)
+  }, [yValues])
+
+  useEffect(() => {
     let filteredArr;
     if (portfolios) {
       const filteredPortfolios = Object.values(portfolios).filter(
@@ -231,8 +238,8 @@ const Stats = ({
   }, [positions]);
 
   useEffect(() => {
-    if (positionArr && positions) {
-      if (positionArr.length === positions.length) {
+    if (positionArr && positions && xValues.length === 10 && yValues.length === 10) {
+      if (positionArr.length === positions.length && xValues.length === 10) {
         let totalValue = 0;
 
         positionArr.map((el) => {
@@ -249,19 +256,21 @@ const Stats = ({
               totalVal
           );
         }
-        setXValues(positionArr[0]["xValues"]);
 
-        let yValues = [];
+        let yVals = [];
         for (let i = 0; i < positionArr[0]["personalYValues"].length; i++) {
           let total = 0;
           for (let j = 0; j < positionArr.length; j++) {
             total += parseFloat(positionArr[j]["personalYValues"][i]);
           }
           if (!isNaN(total)) {
-            yValues.push(total);
+            yVals.push(total);
           }
         }
-        setYValues(yValues);
+        setYValues(yVals);
+        let xVals = positionArr[0]['xValues'];
+        xVals = xVals.slice(0,yVals.length)
+        setXValues(xVals);
         setReadyToLoad(true);
       }
     }
@@ -274,7 +283,6 @@ const Stats = ({
 
     if (positionArr.length) {
       if (step === "day") {
-        newXValues = positionArr[0]["xValues"];
         for (let i = 0; i < positionArr[0]["yValues"].length; i++) {
           let total = 0;
           for (let j = 0; j < positionArr.length; j++) {
@@ -283,6 +291,8 @@ const Stats = ({
           if (!isNaN(total)) {
             newYValues.push(total);
           }
+          newXValues = positionArr[0]["xValues"];
+          newXValues = newXValues.slice(0, newYValues.length)
         }
       } else if (step === "week") {
         newXValues = positionArr[0]["week"]["xValues"];
@@ -660,7 +670,11 @@ const Stats = ({
                   100
                 ).toFixed(2);
                 return (
-                  <div
+                  <>
+                  {
+                    !el.quantity ? <></> : 
+                    <>
+                                      <div
                     className="position-item"
                     key={el.ticker}
                     onClick={() => setRedirectStock(el.ticker)}
@@ -754,6 +768,9 @@ const Stats = ({
                       </h6>
                     </div>
                   </div>
+                    </>
+                  }
+                  </>
                 );
                 {
                   setHasFetchedStocks(true);
@@ -800,7 +817,7 @@ const Stats = ({
                 return (
                   <div
                     className="position-item"
-                    key={el.ticker}
+                    key={el.ticker + '_position'}
                     onClick={() => setRedirectStock(el.ticker)}
                   >
                     <div className="portfolio-item-ticker">

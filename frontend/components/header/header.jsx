@@ -10,8 +10,10 @@ const Header = ({ currentUser, logout }) => {
   );
 
   function redirectToHome() {
-    logout();
-    history.push("/");
+    setTimeout(() => {
+      logout();
+      history.push("/");
+    }, 500)
   }
 
   function add(e) {
