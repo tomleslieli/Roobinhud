@@ -70,13 +70,6 @@ const Stats = ({
   }, []);
 
   useEffect(() => {
-    console.log(xValues)
-  }, [xValues])
-  useEffect(() => {
-    console.log(yValues)
-  }, [yValues])
-
-  useEffect(() => {
     let filteredArr;
     if (portfolios) {
       const filteredPortfolios = Object.values(portfolios).filter(
