@@ -22,6 +22,7 @@ const StockForm = ({ fetchStock }) => {
       <input
         placeholder = 'Search'
         className="search-bar"
+        id='search-bar'
         type="text"
         value={state.ticker}
         onChange={(e) => setState({ ticker: e.target.value.toUpperCase() })}

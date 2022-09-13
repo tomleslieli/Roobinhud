@@ -70,7 +70,7 @@ const Header = ({ currentUser, logout }) => {
                 Invest
               </Link>
               <a
-                href="https://github.com/tomleslieli/robinhood"
+                href="https://github.com/tomleslieli/Roobinhud"
                 id="link"
                 className="github-signed-out"
                 target="_blank"
@@ -200,11 +200,11 @@ const Header = ({ currentUser, logout }) => {
             />
           </Link>
         </div>
-        <div className="search-bar-container">
+        <div className="search-bar-container-logged-in">
           <i className="fa-solid fa-magnifying-glass fa-lg"></i>
           <StockForm store={store} />
         </div>
-        <div className="header-user">
+        <div className="header-user-logged-in">
           <span className="header-user-links">
             <a
               href="https://github.com/tomleslieli/robinhood"

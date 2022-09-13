@@ -231,7 +231,12 @@ const Stats = ({
   }, [positions]);
 
   useEffect(() => {
-    if (positionArr && positions && xValues.length === 10 && yValues.length === 10) {
+    if (
+      positionArr &&
+      positions &&
+      xValues.length === 10 &&
+      yValues.length === 10
+    ) {
       if (positionArr.length === positions.length && xValues.length === 10) {
         let totalValue = 0;
 
@@ -261,8 +266,8 @@ const Stats = ({
           }
         }
         setYValues(yVals);
-        let xVals = positionArr[0]['xValues'];
-        xVals = xVals.slice(0,yVals.length)
+        let xVals = positionArr[0]["xValues"];
+        xVals = xVals.slice(0, yVals.length);
         setXValues(xVals);
         setReadyToLoad(true);
       }
@@ -285,7 +290,7 @@ const Stats = ({
             newYValues.push(total);
           }
           newXValues = positionArr[0]["xValues"];
-          newXValues = newXValues.slice(0, newYValues.length)
+          newXValues = newXValues.slice(0, newYValues.length);
         }
       } else if (step === "week") {
         newXValues = positionArr[0]["week"]["xValues"];
@@ -664,105 +669,106 @@ const Stats = ({
                 ).toFixed(2);
                 return (
                   <>
-                  {
-                    !el.quantity ? <></> : 
-                    <>
-                                      <div
-                    className="position-item"
-                    key={el.ticker}
-                    onClick={() => setRedirectStock(el.ticker)}
-                  >
-                    <div className="portfolio-item-ticker">
-                      <h6>{el.ticker}</h6>
-                    </div>
-                    <div className="mini-chart">
-                      <Line
-                        id="stock-chart"
-                        className="stock-line-chart-graph"
-                        height="62.5px"
-                        width="100px"
-                        data={{
-                          labels: el.xValues,
-                          datasets: [
-                            {
-                              type: "line",
-                              data: el.yValues,
-                              borderColor: color,
-                              borderWidth: 0.5,
-                              backgroundColor: "white",
-                              pointBorderColor: "rgba(0,0,0,0)",
-                              pointBackgroundColor: "rgba(0,0,0,0)",
-                              pointHoverBackgroundColor: "color",
-                              pointHoverRadius: 6,
-                              tension: 0.05,
-                            },
-                          ],
-                        }}
-                        options={{
-                          animations: false,
-                          plugins: {
-                            legend: {
-                              display: false,
-                              labels: {
-                                usePointStyle: true,
-                              },
-                            },
-                            tooltip: {
-                              enabled: false,
-                              mode: "index",
-                              intersect: false,
-                            },
-                          },
-                          layout: {
-                            padding: 10,
-                          },
-                          scales: {
-                            x: {
-                              gridLines: {
-                                drawBorder: false,
-                                zeroLineColor: "transparent",
-                              },
-                              ticks: {
-                                display: false,
-                              },
-                              grid: {
-                                display: false,
-                                drawBorder: false,
-                              },
-                            },
-                            y: {
-                              gridLines: {
-                                drawBorder: false,
-                                zeroLineColor: "transparent",
-                              },
-                              ticks: {
-                                display: false,
-                              },
-                              grid: {
-                                display: false,
-                                drawBorder: false,
-                              },
-                            },
-                          },
-                        }}
-                      />
-                    </div>
-                    <div className="portfolio-item-change">
-                      <h5>
-                        $
-                        {parseFloat(el.yValues[el.yValues.length - 1]).toFixed(
-                          2
-                        )}
-                      </h5>
-                      <br />
-                      <h6 style={{ color: color }}>
-                        {change >= 0 ? "+" : ""}
-                        {changePercent}%
-                      </h6>
-                    </div>
-                  </div>
-                    </>
-                  }
+                    {!el.quantity ? (
+                      <></>
+                    ) : (
+                      <>
+                        <div
+                          className="position-item"
+                          key={el.ticker}
+                          onClick={() => setRedirectStock(el.ticker)}
+                        >
+                          <div className="portfolio-item-ticker">
+                            <h6>{el.ticker}</h6>
+                          </div>
+                          <div className="mini-chart">
+                            <Line
+                              id="stock-chart"
+                              className="stock-line-chart-graph"
+                              height="62.5px"
+                              width="100px"
+                              data={{
+                                labels: el.xValues,
+                                datasets: [
+                                  {
+                                    type: "line",
+                                    data: el.yValues,
+                                    borderColor: color,
+                                    borderWidth: 0.5,
+                                    backgroundColor: "white",
+                                    pointBorderColor: "rgba(0,0,0,0)",
+                                    pointBackgroundColor: "rgba(0,0,0,0)",
+                                    pointHoverBackgroundColor: "color",
+                                    pointHoverRadius: 6,
+                                    tension: 0.05,
+                                  },
+                                ],
+                              }}
+                              options={{
+                                animations: false,
+                                plugins: {
+                                  legend: {
+                                    display: false,
+                                    labels: {
+                                      usePointStyle: true,
+                                    },
+                                  },
+                                  tooltip: {
+                                    enabled: false,
+                                    mode: "index",
+                                    intersect: false,
+                                  },
+                                },
+                                layout: {
+                                  padding: 10,
+                                },
+                                scales: {
+                                  x: {
+                                    gridLines: {
+                                      drawBorder: false,
+                                      zeroLineColor: "transparent",
+                                    },
+                                    ticks: {
+                                      display: false,
+                                    },
+                                    grid: {
+                                      display: false,
+                                      drawBorder: false,
+                                    },
+                                  },
+                                  y: {
+                                    gridLines: {
+                                      drawBorder: false,
+                                      zeroLineColor: "transparent",
+                                    },
+                                    ticks: {
+                                      display: false,
+                                    },
+                                    grid: {
+                                      display: false,
+                                      drawBorder: false,
+                                    },
+                                  },
+                                },
+                              }}
+                            />
+                          </div>
+                          <div className="portfolio-item-change">
+                            <h5>
+                              $
+                              {parseFloat(
+                                el.yValues[el.yValues.length - 1]
+                              ).toFixed(2)}
+                            </h5>
+                            <br />
+                            <h6 style={{ color: color }}>
+                              {change >= 0 ? "+" : ""}
+                              {changePercent}%
+                            </h6>
+                          </div>
+                        </div>
+                      </>
+                    )}
                   </>
                 );
                 {
@@ -810,7 +816,7 @@ const Stats = ({
                 return (
                   <div
                     className="position-item"
-                    key={el.ticker + '_position'}
+                    key={el.ticker + "_position"}
                     onClick={() => setRedirectStock(el.ticker)}
                   >
                     <div className="portfolio-item-ticker">
