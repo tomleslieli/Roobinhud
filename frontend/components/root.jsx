@@ -5,12 +5,9 @@ import App from "./App.jsx";
 
 const Root = ({ store }) => (
   <Provider store={store}>
-    <>
-    <h1>hello</h1>
     <HashRouter>
       <App />
     </HashRouter>
-    </>
   </Provider>
 );
 
