@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/tomleslieli/robinhood/issues"
   },
-  "homepage": "https://github.com/tomleslieli/robinhood#readme",
+  "homepage": "./",
   "dependencies": {
     "@babel/core": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
