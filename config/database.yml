@@ -79,7 +79,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   # database: robinhood_production
   # username: robinhood
-  url: <%= ENV['DATABASE_URL'] %>
   # password: <%= ENV['ROBINHOOD_DATABASE_PASSWORD'] %>
